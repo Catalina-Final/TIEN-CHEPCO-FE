@@ -2,6 +2,7 @@ import * as types from "../constants/auth.constants";
 const initialState = {
   user: {},
   accessToken: localStorage.getItem("accessToken"),
+  isAuthenticated: localStorage.getItem("accessToken") ? true : false,
   loading: false,
 };
 

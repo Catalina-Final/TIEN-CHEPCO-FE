@@ -1,19 +1,19 @@
 
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import PrivateRoute from "./PrivateRoute"
+import PublicLayout from "../layouts/PublicLayout";
+import AdminLayout from "../layouts/AdminLayout";
 
-import HomePage from "../HomePage/index"
-import LoginPage from "../LoginPage/index"
-import RegisterPage from "../RegisterPage/index"
-import DashboardPage from "../DashboardPage/index"
 const Routes = (props) => {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const loading = useSelector((state) => state.auth.loading);
+
   return (
     <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/login" component={LoginPage} />
-      <Route exact path="/register" component={RegisterPage} />
-      <PrivateRoute exact path="/dashboard" component={DashboardPage} />
+      <PrivateRoute path="/admin" component={AdminLayout} isAuthenticated={isAuthenticated} loading={loading} />
+      <Route path="/" component={PublicLayout} />
     </Switch>
   );
 };
