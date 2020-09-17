@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { productActions } from "../../redux/actions/product.actions";
+import { productActions } from "../../../redux/actions/product.actions";
 import { useHistory, Link } from "react-router-dom";
 
-import Product from "../../components/Product"
+import ProductAdminView from "../../../components/ProductAdminView"
 
 import { Button } from "react-bootstrap"
 import ClipLoader from "react-spinners/ClipLoader";
 
-const HomePage = () => {
-  console.log("tien check state", useSelector((state) => state))
+const ProductListPage = () => {
 
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.product.loading);
@@ -20,38 +19,18 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(productActions.productsRequest());
   }, [dispatch]);
-
   const handleClickOnProduct = (id) => {
     history.push(`/products/${id}`);
   };
-  const handleBuyNow = (product) => {
-    dispatch(productActions.addProductToCart(product))
-  }
-
-
-  // const uploadWidget = () => {
-  //   window.cloudinary.openUploadWidget(
-  //     {
-  //       cloud_name: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
-  //       upload_preset: process.env.REACT_APP_CLOUDINARY_PRESET,
-  //       tags: ["socialBlog", "blogImages"],
-  //     },
-  //     function (error, result) {
-  //       if (result && result.length) {
-  //         setFormData({
-  //           ...formData,
-  //           images: result.map((res) => res.secure_url),
-  //         });
-  //       }
-  //     }
-  //   );
-  // };
 
   return (
     <div>
-      <h1>chep co</h1>
-
-
+      <h1>list product</h1>
+      {isAuthenticated && (
+        <Link to="/admin/products/add">
+          <Button variant="primary">Write now</Button>
+        </Link>
+      )}
 
       {loading ? (
         <ClipLoader color="#f86c6b" size={150} loading={loading} />
@@ -62,11 +41,10 @@ const HomePage = () => {
               <>
                 <div>
                   {products.map((product) => (
-                    <Product
+                    <ProductAdminView
                       product={product}
                       key={product._id}
                       handleClick={handleClickOnProduct}
-                      handleBuyNow={handleBuyNow}
                     />
                   ))}
                 </div>
@@ -80,4 +58,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default ProductListPage

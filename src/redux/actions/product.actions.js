@@ -1,117 +1,122 @@
-import * as types from "../constants/blog.constants";
+import * as types from "../constants/product.constants";
 import api from "../api";
 import { alertActions } from "./alert.actions";
 
 const productsRequest = (
-    pageNum = 1,
-    limit = 10,
-    query = null,
-    ownerId = null,
-    sortBy = null
+  // pageNum = 1,
+  // limit = 10,
+  // query = null,
+  // ownerId = null,
+  // sortBy = null
 ) => async (dispatch) => {
-    dispatch({ type: types.PRODUCT_REQUEST, payload: null });
-    try {
-        // let queryString = "";
-        // if (query) {
-        //   queryString = `&title[$regex]=${query}&title[$options]=i`;
-        // }
-        // if (ownerId) {
-        //   queryString = `${queryString}&author=${ownerId}`;
-        // }
-        // let sortByString = "";
-        // if (sortBy?.key) {
-        //   sortByString = `&sortBy[${sortBy.key}]=${sortBy.ascending}`;
-        // }
-        const res = await api.get(
-            `/products`
-        );
-        dispatch({
-            type: types.PRODUCT_REQUEST_SUCCESS,
-            payload: res.data.data,
-        });
-    } catch (error) {
-        dispatch({ type: types.PRODUCT_REQUEST_FAILURE, payload: error });
-    }
+  dispatch({ type: types.PRODUCT_REQUEST, payload: null });
+  try {
+    // let queryString = "";
+    // if (query) {
+    //   queryString = `&title[$regex]=${query}&title[$options]=i`;
+    // }
+    // if (ownerId) {
+    //   queryString = `${queryString}&author=${ownerId}`;
+    // }
+    // let sortByString = "";
+    // if (sortBy?.key) {
+    //   sortByString = `&sortBy[${sortBy.key}]=${sortBy.ascending}`;
+    // }
+    const res = await api.get(
+      `/products`
+    );
+    dispatch({
+      type: types.PRODUCT_REQUEST_SUCCESS,
+      payload: res.data.data,
+    });
+  } catch (error) {
+    dispatch({ type: types.PRODUCT_REQUEST_FAILURE, payload: error });
+  }
 };
 
 const getSingleProduct = (productId) => async (dispatch) => {
-    dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST, payload: null });
-    try {
-        const res = await api.get(`/products/${productId}`);
-        dispatch({
-            type: types.GET_SINGLE_PRODUCT_REQUEST_SUCCESS,
-            payload: res.data.data,
-        });
-    } catch (error) {
-        dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST_FAILURE, payload: error });
-    }
+  dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST, payload: null });
+  try {
+    const res = await api.get(`/products/${productId}`);
+    dispatch({
+      type: types.GET_SINGLE_PRODUCT_REQUEST_SUCCESS,
+      payload: res.data.data,
+    });
+  } catch (error) {
+    dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST_FAILURE, payload: error });
+  }
 };
 
 
 
 const createNewProduct = (
-    name,
-    description,
-    category,
-    inStock,
-    price,
-    availability,
-    ratingsAverage)
-    => async (dispatch) => {
-        dispatch({ type: types.CREATE_PRODUCT_REQUEST, payload: null });
-        try {
-            // formData.append("title", title);
-            // formData.append("content", content); 
-            // if (images && images.length) {
-            //     for (let index = 0; index < images.length; index++) {
-            //         formData.append("images", images[index]);
-            //     }
-            // }
+  name,
+  description,
+  category,
+  inStock,
+  price,
+  availability,
+  ratingsAverage) => async (dispatch) => {
+    dispatch({ type: types.CREATE_PRODUCT_REQUEST, payload: null });
+    try {
+      // formData.append("name", name);
+      // formData.append("description", description); 
+      // formData.append("category", category); 
+      // formData.append("ratingsAverage", ratingsAverage); 
+      // formData.append("inStock", inStock); 
+      // formData.append("availability", availability); 
+      // formData.append("price", price); 
+      // if (images && images.length) {
+      //     for (let index = 0; index < images.length; index++) {
+      //         formData.append("images", images[index]);
+      //     }
+      // }
 
-            // Upload images using cloudinary already
-            const res = await api.post("/products", {
-                name,
-                description,
-                category,
-                inStock,
-                price,
-                availability,
-                ratingsAverage
-            });
+      // Upload images using cloudinary already
+      const res = await api.post("/products", {
+        name,
+        description,
+        category,
+        inStock,
+        price,
+        availability,
+        ratingsAverage
+      });
 
-            dispatch({
-                type: types.CREATE_PRODUCT_SUCCESS,
-                payload: res.data.data,
-            });
-            dispatch(alertActions.setAlert("New product has been created!", "success"));
-        } catch (error) {
-            dispatch({ type: types.CREATE_PRODUCT_FAILURE, payload: error });
-        }
-    };
+      dispatch({
+        type: types.CREATE_PRODUCT_SUCCESS,
+        payload: res.data.data,
+      });
+      dispatch(alertActions.setAlert("New product has been created!", "success"));
+    } catch (error) {
+      dispatch({ type: types.CREATE_PRODUCT_FAILURE, payload: error });
+    }
+  };
 
 const updateProduct = (
-productId, 
-name,
-description,
-category,
-inStock,
-price,
-availability,
-ratingsAverage 
+  productId,
+  name,
+  description,
+  category,
+  inStock,
+  price,
+  availability,
+  ratingsAverage
 ) => async (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST, payload: null });
   try {
     // let formData = new FormData();
     // formData.set("title", title); ?
     // formData.set("content", content); ?
-    const res = await api.put(`/products/${productId}`, { 
-name,
-description,
-category,
-inStock,
-price,
-availability,
-ratingsAverage  });
+    const res = await api.put(`/products/${productId}`, {
+      name,
+      description,
+      category,
+      inStock,
+      price,
+      availability,
+      ratingsAverage
+    });
 
     dispatch({
       type: types.UPDATE_PRODUCT_SUCCESS,
@@ -143,12 +148,23 @@ const setRedirectTo = (redirectTo) => ({
   payload: redirectTo,
 });
 
+const addProductToCart = (productId, qty) => async (dispatch) => {
+  try {
+    const res = await api.post("/orders/add", { productId, quantity: qty });
+    dispatch({ type: "FINISH", payload: res.data.data });
+  } catch (error) {
+    // dispatch({ type: types.UPDATE_PROFILE_FAILURE, payload: error });
+    console.log(error)
+  }
+}
+
 
 export const productActions = {
-    productsRequest,
-    getSingleProduct,
-    createNewProduct,
-    updateProduct,
-    deleteProduct,
-    setRedirectTo
+  productsRequest,
+  getSingleProduct,
+  createNewProduct,
+  updateProduct,
+  deleteProduct,
+  setRedirectTo,
+  addProductToCart
 };

@@ -75,7 +75,11 @@ const getCurrentUser = (accessToken) => async (dispatch) => {
   }
   try {
     const res = await api.get("/users/me");
-    dispatch({ type: types.GET_CURRENT_USER_SUCCESS, payload: res.data.data });
+
+      dispatch({ type: types.GET_CURRENT_USER_SUCCESS, payload: res.data.data })
+      dispatch({ type: "UPDATE_CART_ON_REFRESH", payload: res.data.data.cart.products })
+
+    return dispatch({ type: "DONE" })
   } catch (error) {
     dispatch({ type: types.GET_CURRENT_USER_FAILURE, payload: error });
   }
@@ -87,6 +91,7 @@ const logout = () => (dispatch) => {
   dispatch({ type: types.LOGOUT, payload: null });
 };
 
+
 export const authActions = {
   loginRequest,
   loginFacebookRequest,
@@ -96,3 +101,4 @@ export const authActions = {
   getCurrentUser,
   logout,
 };
+
