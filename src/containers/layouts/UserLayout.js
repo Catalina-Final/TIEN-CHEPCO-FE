@@ -6,6 +6,7 @@ import NotFoundPage from "../layouts/NotFoundPage";
 import PublicNavbar from "../PublicNavBar"
 import UserOrder from "../User/UserOrder"
 import AlertMsg from "./AlertMsg";
+import ShipingPage from "../User/ShipingPage"
 
 const UserLayout = () => {
     return (
@@ -15,6 +16,7 @@ const UserLayout = () => {
             <Switch>
                 <Route exact path="/user/dashboard" component={DashboardPage} />
                 <Route exact path="/user/order" component={UserOrder} />
+                <Route exact path="/user/order/shiping" component={ShipingPage} />
                 <Route component={NotFoundPage} />
             </Switch>
 

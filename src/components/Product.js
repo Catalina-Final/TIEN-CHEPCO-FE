@@ -4,10 +4,7 @@ import { useDispatch } from "react-redux";
 import { productActions } from "../redux/actions";
 
 
-
-
-
-const Product = ({ product, handleClick, handleBuyNow }) => {
+const Product = ({ product, handleClick }) => {
     const [q, setQ] = React.useState(1)
     const dispatch = useDispatch()
     return (
@@ -26,23 +23,18 @@ const Product = ({ product, handleClick, handleBuyNow }) => {
                 <Card.Text>
                     {product.avalibility}
                 </Card.Text>
-                <Button variant="warning" onClick={() => handleBuyNow(product)} >Buy now</Button>
 
-
-                ============== <br />
-                <Button
-                    onClick={() => setQ(q + 1)}
-                >up</Button>
-                <Card.Text>{product.qty}</Card.Text>
-                <Card.Text>heheh {q}</Card.Text>
-                <Button>down</Button>
+              
+                <Card.Text>quantity {q}</Card.Text>
+                
                 <Card.Text>{product.price}$</Card.Text>
                 <Button
                     onClick={() => {
                         dispatch(productActions.addProductToCart(product._id, q))
                         setQ(1)
                     }}
-                >BUY</Button>
+                >Add</Button>
+                
             </Card.Body>
         </Card>
     )

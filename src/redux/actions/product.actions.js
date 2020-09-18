@@ -1,4 +1,4 @@
-import * as types from "../constants/product.constants";
+import * as types from "../constants/auth.constants";
 import api from "../api";
 import { alertActions } from "./alert.actions";
 
@@ -11,17 +11,7 @@ const productsRequest = (
 ) => async (dispatch) => {
   dispatch({ type: types.PRODUCT_REQUEST, payload: null });
   try {
-    // let queryString = "";
-    // if (query) {
-    //   queryString = `&title[$regex]=${query}&title[$options]=i`;
-    // }
-    // if (ownerId) {
-    //   queryString = `${queryString}&author=${ownerId}`;
-    // }
-    // let sortByString = "";
-    // if (sortBy?.key) {
-    //   sortByString = `&sortBy[${sortBy.key}]=${sortBy.ascending}`;
-    // }
+
     const res = await api.get(
       `/products`
     );
@@ -150,14 +140,45 @@ const setRedirectTo = (redirectTo) => ({
 
 const addProductToCart = (productId, qty) => async (dispatch) => {
   try {
-    const res = await api.post("/orders/add", { productId, quantity: qty });
-    dispatch({ type: "FINISH", payload: res.data.data });
+    const res = await api.post("/orders/addToCart", { productId, quantity: qty });
+    dispatch({ type: types.ADD_PRODUCT_TO_CART, payload: res.data.data });
   } catch (error) {
-    // dispatch({ type: types.UPDATE_PROFILE_FAILURE, payload: error });
+
+    console.log(error)
+  }
+}
+//REMOVE_PRODUCT_FROM_CART
+
+const removeProductFromCart = (productId, qty) => async (dispatch) => {
+  try {
+    const res = await api.post("/orders/removeFromCart", { productId, quantity: qty });
+    dispatch({ type: types.REMOVE_PRODUCT_FROM_CART, payload: res.data.data });
+  } catch (error) {
+
     console.log(error)
   }
 }
 
+//
+const deleteProductFromOrder = (productId, qty) => async (dispatch) => {
+  try {
+    const res = await api.post("/orders/deleteFromOrder", { productId, quantity: qty });
+    dispatch({ type: types.REMOVE_PRODUCT_FROM_ORDER, payload: res.data.data });
+  } catch (error) {
+
+    console.log(error)
+  }
+}
+
+const takeOrder = (productId, qty) => async (dispatch) => {
+  try {
+    const res = await api.post("/orders/completeOrder", { productId, quantity: qty });
+    dispatch({ type: types.BILL_REQUEST, payload: res.data.data });
+  } catch (error) {
+
+    console.log(error)
+  }
+}
 
 export const productActions = {
   productsRequest,
@@ -166,5 +187,8 @@ export const productActions = {
   updateProduct,
   deleteProduct,
   setRedirectTo,
-  addProductToCart
+  addProductToCart,
+  removeProductFromCart,
+  deleteProductFromOrder, 
+  takeOrder
 };

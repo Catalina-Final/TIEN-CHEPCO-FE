@@ -22,13 +22,13 @@ const ProductAddPage = () => {
         price: "",
         // images: null,
     });
-    const loading = useSelector((state) => state.product.loading);
+    const loading = useSelector((state) => state.auth.loading);
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();
 
-    const selectedProduct = useSelector((state) => state.product.selectedProduct);
-    const redirectTo = useSelector((state) => state.product.redirectTo);
+    const selectedProduct = useSelector((state) => state.auth.selectedProduct);
+    const redirectTo = useSelector((state) => state.auth.redirectTo);
     const addOrEdit = params.id ? "Edit" : "Add";
     const productId = params.id;
 

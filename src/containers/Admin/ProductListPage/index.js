@@ -11,8 +11,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 const ProductListPage = () => {
 
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.product.loading);
-  const products = useSelector((state) => state.product.products);
+  const loading = useSelector((state) => state.auth.loading);
+  const products = useSelector((state) => state.auth.products);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const history = useHistory();
 

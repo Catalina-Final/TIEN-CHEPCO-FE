@@ -5,7 +5,6 @@ const initialState = {
   user: {},
   accessToken: localStorage.getItem("accessToken"),
   isAuthenticated: undefined,
-  loading: false,
 
 
   products: [],
@@ -57,12 +56,13 @@ const authReducer = (state = initialState, action) => {
       console.log(payload)
       return {
         ...state,
+        cart: calcCart(payload.cart.products),
         user: payload.user,
         loading: false,
-        // isAuthenticated: true,
+        isAuthenticated: true,
       };
     case "DONE":
-      console.log("hihihihihi")
+
       return {
         ...state,
         isAuthenticated: true,
@@ -76,12 +76,6 @@ const authReducer = (state = initialState, action) => {
         loading: false,
       };
 
-
-
-
-
-    case "UPDATE_CART_ON_REFRESH":
-      return { ...state, cart: calcCart(payload) };
     case types.PRODUCT_REQUEST:
     case types.GET_SINGLE_PRODUCT_REQUEST:
     case types.CREATE_PRODUCT_REQUEST:
@@ -138,12 +132,16 @@ const authReducer = (state = initialState, action) => {
     //   } else {
     //     return { ...state, cart: [...state.cart, payload] }
     //   }
-    case "FINISH":
-      // {
-      //   name, _id, qty, price
-      // }
+    case types.ADD_PRODUCT_TO_CART:
 
-      return { ...state, cart: calcCart(payload) }
+      return { ...state, cart: calcCart(payload.products) }
+    case types.REMOVE_PRODUCT_FROM_CART:
+      return {...state, cart: calcCart(payload.products)}
+    case types.REMOVE_PRODUCT_FROM_ORDER:
+        return {...state, cart: calcCart(payload.products)}
+    case types.BILL_REQUEST:
+        return {...state, cart: calcCart(payload.products)}
+
 
     default:
       return state;

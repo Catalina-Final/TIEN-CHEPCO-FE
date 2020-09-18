@@ -12,8 +12,8 @@ const HomePage = () => {
   console.log("tien check state", useSelector((state) => state))
 
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.product.loading);
-  const products = useSelector((state) => state.product.products);
+  const loading = useSelector((state) => state.auth.loading);
+  const products = useSelector((state) => state.auth.products);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const history = useHistory();
 
@@ -24,9 +24,10 @@ const HomePage = () => {
   const handleClickOnProduct = (id) => {
     history.push(`/products/${id}`);
   };
-  const handleBuyNow = (product) => {
-    dispatch(productActions.addProductToCart(product))
-  }
+  // const handleAdd = (product) => {
+  //   dispatch(productActions.addProductToCart(product));
+  //   dispatch(productActions.removeProductFromCart(product));
+  // }
 
 
   // const uploadWidget = () => {
@@ -66,7 +67,7 @@ const HomePage = () => {
                       product={product}
                       key={product._id}
                       handleClick={handleClickOnProduct}
-                      handleBuyNow={handleBuyNow}
+                    // addMore={handleAdd}
                     />
                   ))}
                 </div>

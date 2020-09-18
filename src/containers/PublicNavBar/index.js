@@ -7,9 +7,10 @@ import { useDispatch } from "react-redux";
 const PuclicNavbar = () => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const loading = useSelector((state) => state.auth.loading);
-    const cart = useSelector((state) => state.product.cart);
+    const cart = useSelector((state) => state.auth.cart);
+    console.log(cart)
     const productNum = cart.length > 0 ? cart.reduce((sum, product) => (sum + product.qty), 0) : 0;
-    
+
     const dispatch = useDispatch();
     const handleLogout = () => {
         dispatch(authActions.logout());

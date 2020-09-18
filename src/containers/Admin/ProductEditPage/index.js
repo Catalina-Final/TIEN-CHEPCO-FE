@@ -12,12 +12,12 @@ import {
 
 const ProductEditPage = () => {
 
-    const loading = useSelector((state) => state.product.loading);
+    const loading = useSelector((state) => state.auth.loading);
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();
     const auth = useSelector(state => state.auth)
-    const selectedProduct = useSelector((state) => state.product.selectedProduct);
+    const selectedProduct = useSelector((state) => state.auth.selectedProduct);
     const [formData, setFormData] = useState({
         name: "",
         description: "",
@@ -28,7 +28,7 @@ const ProductEditPage = () => {
         price: "",
         // images: null,
     });
-    const redirectTo = useSelector((state) => state.product.redirectTo);
+    const redirectTo = useSelector((state) => state.auth.redirectTo);
     const productId = params.id;
     // useEffect(() => {
     //     setFormData(selectedProduct)

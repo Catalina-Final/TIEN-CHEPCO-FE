@@ -1,5 +1,5 @@
-export default function (payload) {
-    return payload.products.reduce((acc, el) => {
+export default function (arr) {
+    return arr.reduce((acc, el) => {
         const foundIdx = acc.findIndex((e) => e._id === el._id);
         if (foundIdx === -1) {
             el.qty = 1

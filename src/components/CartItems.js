@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Container } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { productActions } from "../redux/actions";
 
@@ -11,21 +11,29 @@ const CartItems = ({ chosenItem }) => {
     const dispatch = useDispatch()
     return (
         <div>
+            <Container>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>{chosenItem.name}</Card.Title>
+                        <Card.Text>{chosenItem.price}$</Card.Text>
+                        <Button onClick={() => setQ(q + 1)}>+</Button>
+                        <Card.Text>quantity want to add or remove {q}</Card.Text>
+                        <Button onClick={() => setQ(q - 1)}>-</Button>
+                        <Card.Text>order {chosenItem.qty} items</Card.Text>
+                        <hr></hr>
+                        <Button
+                            onClick={() => dispatch(productActions.addProductToCart(chosenItem._id, q))}
+                        >add </Button>
+                        <Button
+                            onClick={() => dispatch(productActions.removeProductFromCart(chosenItem._id, q))}
+                        >remove</Button>
+                        <Button
+                            onClick={() => dispatch(productActions.removeProductFromCart(chosenItem._id, chosenItem.qty))}
+                        >delete product</Button>
 
-            <Card>
-                <Card.Title>{chosenItem.name}</Card.Title>
-                <Card.Text>{chosenItem.type.type}</Card.Text>
-                <Button
-                    onClick={() => setQ(q + 1)}
-                >up</Button>
-                <Card.Text>heheheh {q}</Card.Text>
-                <Card.Text>{chosenItem.qty}</Card.Text>
-                <Button>down</Button>
-                <Card.Text>{chosenItem.price}$</Card.Text>
-                <Button
-                    onClick={() => dispatch(productActions.addProductToCart(chosenItem._id, q))}
-                >BUY</Button>
-            </Card>
+                    </Card.Body>
+                </Card>
+            </Container>
         </div>
     )
 }
