@@ -11,7 +11,6 @@ const Routes = (props) => {
   // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const auth = useSelector(s => s.auth)
   const loading = useSelector((state) => state.auth.loading);
-  console.log("check user role",auth.user)
   return (
     <Switch>
       <PrivateRoute path="/admin" component={AdminLayout} isAuthenticated={auth.user.roles === "admin" ? true : false} loading={loading} />

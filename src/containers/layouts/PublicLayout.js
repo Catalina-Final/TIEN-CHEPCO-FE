@@ -4,6 +4,7 @@ import PublicNavbar from "../PublicNavBar"
 import HomePage from "../HomePage/index"
 import LoginPage from "../LoginPage/index"
 import RegisterPage from "../RegisterPage/index";
+import AboutUs from "../AboutPage/index"
 import ProductDetailPage from "../ProductDetailPage";
 import NotFoundPage from "../layouts/NotFoundPage";
 import AlertMsg from "./AlertMsg";
@@ -18,7 +19,7 @@ const PublicLayout = () => {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
-
+        <Route exact path="/about" component={AboutUs} />
         <Route exact path="/products/:id" component={ProductDetailPage} />
 
         <Route component={NotFoundPage} />

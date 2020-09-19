@@ -26,23 +26,8 @@ const Product = ({ product, handleClick, handleBuyNow }) => {
                 <Card.Text>
                     {product.avalibility}
                 </Card.Text>
-                <Button variant="warning" onClick={() => handleBuyNow(product)} >Buy now</Button>
+                <Button variant="warning" onClick={() => handleBuyNow(product._id)} >Buy now</Button>
 
-
-                ============== <br />
-                <Button
-                    onClick={() => setQ(q + 1)}
-                >up</Button>
-                <Card.Text>{product.qty}</Card.Text>
-                <Card.Text>heheh {q}</Card.Text>
-                <Button>down</Button>
-                <Card.Text>{product.price}$</Card.Text>
-                <Button
-                    onClick={() => {
-                        dispatch(productActions.addProductToCart(product._id, q))
-                        setQ(1)
-                    }}
-                >BUY</Button>
             </Card.Body>
         </Card>
     )

@@ -1,4 +1,5 @@
 import * as types from "../constants/auth.constants";
+import { ADD_PRODUCT_TO_CART } from "../constants/product.constants";
 import api from "../api";
 import { alertActions } from "./alert.actions";
 
@@ -76,11 +77,12 @@ const getCurrentUser = (accessToken) => async (dispatch) => {
   try {
     const res = await api.get("/users/me");
 
-      dispatch({ type: types.GET_CURRENT_USER_SUCCESS, payload: res.data.data })
-      dispatch({ type: "UPDATE_CART_ON_REFRESH", payload: res.data.data.cart.products })
-
-    return dispatch({ type: "DONE" })
+    dispatch({ type: types.GET_CURRENT_USER_SUCCESS, payload: res.data.data.user })
+    dispatch({ type: ADD_PRODUCT_TO_CART, payload: res.data.data.cart })
+    // dispatch({ type: "UPDATE_CART_ON_REFRESH", payload: res.data.data.cart.products })
+    // return dispatch({ type: "DONE" })
   } catch (error) {
+    console.log(error);
     dispatch({ type: types.GET_CURRENT_USER_FAILURE, payload: error });
   }
 };

@@ -2,26 +2,10 @@ import * as types from "../constants/product.constants";
 import api from "../api";
 import { alertActions } from "./alert.actions";
 
-const productsRequest = (
-  // pageNum = 1,
-  // limit = 10,
-  // query = null,
-  // ownerId = null,
-  // sortBy = null
-) => async (dispatch) => {
+const productsRequest = () => async (dispatch) => {
   dispatch({ type: types.PRODUCT_REQUEST, payload: null });
   try {
-    // let queryString = "";
-    // if (query) {
-    //   queryString = `&title[$regex]=${query}&title[$options]=i`;
-    // }
-    // if (ownerId) {
-    //   queryString = `${queryString}&author=${ownerId}`;
-    // }
-    // let sortByString = "";
-    // if (sortBy?.key) {
-    //   sortByString = `&sortBy[${sortBy.key}]=${sortBy.ascending}`;
-    // }
+
     const res = await api.get(
       `/products`
     );
@@ -148,16 +132,32 @@ const setRedirectTo = (redirectTo) => ({
   payload: redirectTo,
 });
 
-const addProductToCart = (productId, qty) => async (dispatch) => {
+const addProductToCart = (productId, qty = 1) => async (dispatch) => {
   try {
-    const res = await api.post("/orders/add", { productId, quantity: qty });
-    dispatch({ type: "FINISH", payload: res.data.data });
+    const res = await api.post("/products/cart", { product: productId, quantity: qty });
+    dispatch({ type: types.ADD_PRODUCT_TO_CART, payload: res.data.data });
   } catch (error) {
-    // dispatch({ type: types.UPDATE_PROFILE_FAILURE, payload: error });
     console.log(error)
   }
 }
 
+const removeProductFromCart = (productId) => async (dispatch) => {
+  try {
+    const res = await api.delete(`/products/cart/${productId}`);
+    dispatch({ type: types.REMOVE_PRODUCT_FROM_CART, payload: res.data.data });
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const updateProductFromCart = (productId, quantity) => async (dispatch) => {
+  try {
+    const res = await api.put(`/products/cart/${productId}`, { quantity });
+    dispatch({ type: types.EDIT_QTY_IN_CART, payload: res.data.data });
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export const productActions = {
   productsRequest,
@@ -166,5 +166,7 @@ export const productActions = {
   updateProduct,
   deleteProduct,
   setRedirectTo,
-  addProductToCart
+  addProductToCart,
+  removeProductFromCart,
+  updateProductFromCart
 };

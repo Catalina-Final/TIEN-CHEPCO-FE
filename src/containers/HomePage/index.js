@@ -9,7 +9,7 @@ import { Button } from "react-bootstrap"
 import ClipLoader from "react-spinners/ClipLoader";
 
 const HomePage = () => {
-  console.log("tien check state", useSelector((state) => state))
+
 
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.product.loading);
@@ -24,8 +24,8 @@ const HomePage = () => {
   const handleClickOnProduct = (id) => {
     history.push(`/products/${id}`);
   };
-  const handleBuyNow = (product) => {
-    dispatch(productActions.addProductToCart(product))
+  const handleBuyNow = (productId) => {
+    dispatch(productActions.addProductToCart(productId))
   }
 
 

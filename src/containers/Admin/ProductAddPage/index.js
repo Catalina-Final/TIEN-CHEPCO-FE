@@ -102,7 +102,7 @@ const ProductAddPage = () => {
 
     return (
         <div>
-            fdsfds
+
             <Form onSubmit={handleSubmit}>
                 <div className="text-center mb-3">
                     <h1 className="text-primary">{addOrEdit} product</h1>
