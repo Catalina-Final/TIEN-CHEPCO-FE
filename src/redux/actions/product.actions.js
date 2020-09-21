@@ -32,15 +32,15 @@ const getSingleProduct = (productId) => async (dispatch) => {
 };
 
 
-
 const createNewProduct = (
   name,
   description,
   category,
+  ratingsAverage,
   inStock,
-  price,
   availability,
-  ratingsAverage) => async (dispatch) => {
+  price,
+  images) => async (dispatch) => {
     dispatch({ type: types.CREATE_PRODUCT_REQUEST, payload: null });
     try {
       // formData.append("name", name);
@@ -61,10 +61,11 @@ const createNewProduct = (
         name,
         description,
         category,
+        ratingsAverage,
         inStock,
-        price,
         availability,
-        ratingsAverage
+        price,
+        images
       });
 
       dispatch({

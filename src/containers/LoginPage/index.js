@@ -7,6 +7,12 @@ import FacebookLogin from "react-facebook-login";
 import { GoogleLogin } from "react-google-login";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FB_APP_ID, GOOGLE_CLIENT_ID } from "../../config/constants";
+import './style.css'
+import LoginBg from '../../images/login-bg.png'
+import MailIcon from '../../images/mail-icon.svg'
+import GgIcon from '../../images/google-icon.svg'
+import FbIcon from '../../images/fb-icon.svg'
+
 const LoginPage = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -44,45 +50,42 @@ const LoginPage = () => {
   if (isAuthenticated) return <Redirect to="/" />;
 
   return (
-    <Container>
-      <Row>
-        <Col md={{ span: 6, offset: 3 }}>
-          <Form onSubmit={handleSubmit}>
-            <div className="text-center mb-3">
-              <h1 className="text-primary">Sign In</h1>
-              <p className="lead">
-                <FontAwesomeIcon icon="user" size="1x" /> Sign Into Your Account
-              </p>
-            </div>
-            <Form.Group>
-              <Form.Control
-                type="email"
-                required
-                placeholder="Email Address"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-              {errors.email && (
-                <small className="form-text text-danger">{errors.email}</small>
-              )}
-            </Form.Group>
-            <Form.Group>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                minLength="3"
-              />
-              {errors.password && (
-                <small className="form-text text-danger">
-                  {errors.password}
-                </small>
-              )}
-            </Form.Group>
+    <div className="tien-login-page-style">
+      <div style={{ border: "1px solid red" }}>
+        <img src={LoginBg} alt="login bg" style={{ height: "100vh" }} />
+      </div>
+      <Col md={{ span: 6, offset: 3 }}>
+        <Form onSubmit={handleSubmit} className="tien-login-form">
 
+          <Form.Group>
+            <Form.Control
+              type="email"
+              required
+              placeholder="Email Address"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            {errors.email && (
+              <small className="form-text text-danger">{errors.email}</small>
+            )}
+          </Form.Group>
+          <Form.Group>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              minLength="3"
+            />
+            {errors.password && (
+              <small className="form-text text-danger">
+                {errors.password}
+              </small>
+            )}
+          </Form.Group>
+          <div className="tien-arrange-icon">
             {loading ? (
               <Button
                 className="btn-block"
@@ -98,57 +101,51 @@ const LoginPage = () => {
                 Loading...
               </Button>
             ) : (
-                <Button className="btn-block" type="submit" variant="primary">
-                  Login
-                </Button>
+
+                <label style={{ cursor: "pointer" }}>
+                  <img src={MailIcon} alt="mail icon" style={{ width: "6vw" }} />
+                  <Button className="btn-block" type="submit" style={{ display: "none" }}>
+                    Login
+              </Button>
+                </label>
+
               )}
-            <hr />
-            <div className="d-flex flex-column text-center">
+
+            <label style={{ cursor: "pointer" }}>
+              <img src={FbIcon} alt="fb icon" style={{ width: "5vw" }} />
               <FacebookLogin
                 appId={FB_APP_ID}
+                style={{ display: "none" }}
                 fields="name,email,picture"
                 callback={loginWithFacebook}
-                icon="fa-facebook"
-                onFailure={(err) => {
-                  console.log("FB LOGIN ERROR:", err);
-                }}
-                containerStyle={{
-                  textAlign: "center",
-                  backgroundColor: "#3b5998",
-                  borderColor: "#3b5998",
-                  flex: 1,
-                  display: "flex",
-                  color: "#fff",
-                  cursor: "pointer",
-                  marginBottom: "3px",
-                }}
-                buttonStyle={{
-                  flex: 1,
-                  textTransform: "none",
-                  padding: "12px",
-                  background: "none",
-                  border: "none",
-                }}
+              // onFailure={(err) => {
+              //   console.log("FB LOGIN ERROR:", err);
+              // }}
+              // style={{ display: "none" }}
               />
-
+            </label>
+            <label style={{ cursor: "pointer" }}>
+              <img src={GgIcon} alt="google icon" style={{ width: "5vw" }} />
               <GoogleLogin
-                className="google-btn d-flex justify-content-center"
+                className="fb-bnt-tien"
                 clientId={GOOGLE_CLIENT_ID}
-                buttonText="Login with Google"
                 onSuccess={loginWithGoogle}
-                onFailure={(err) => {
-                  console.log("GOOGLE LOGIN ERROR:", err);
-                }}
+                // onFailure={(err) => {
+                //   console.log("GOOGLE LOGIN ERROR:", err);
+                // }}
                 cookiePolicy="single_host_origin"
               />
-            </div>
-            <p>
-              Don't have an account? <Link to="/register">Sign Up</Link>
-            </p>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+            </label>
+
+          </div>
+          <p style={{ textAlign: "center" }}>
+            Don't have an account? <Link to="/register">Sign Up</Link>
+          </p>
+
+        </Form>
+      </Col>
+
+    </div>
   )
 }
 

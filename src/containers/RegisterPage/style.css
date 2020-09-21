@@ -1,0 +1,30 @@
+.tien-register-style{
+    display: flex;
+   
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.tien-auth-form {
+    width: 30vw !important;
+    position: absolute;
+    z-index: 0;
+}
+
+.row{
+    width: 40vw;
+    margin-bottom: 10vh;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.tien-bnt-reg{
+    display: flex;
+    cursor: pointer;
+
+}
+
+.form-control{
+    border-radius: 15px;
+}

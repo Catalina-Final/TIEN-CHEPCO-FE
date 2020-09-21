@@ -8,7 +8,7 @@ import Moment from "react-moment";
 
 const ProductAdminView = ({ product, handleClick }) => {
 
-
+    console.log(product)
     return (
         // <Card onClick={() => handleClick(product._id)}>
         <Card>
@@ -18,7 +18,7 @@ const ProductAdminView = ({ product, handleClick }) => {
             <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>
-                    Category:  {product.type.type}
+                    Category:  {product.type}
                 </Card.Text>
 
                 <Card.Text>

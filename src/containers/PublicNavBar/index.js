@@ -5,22 +5,32 @@ import { useSelector } from "react-redux";
 import { authActions } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import NavbarLinks from "../PublicNavBar/NavbarLinks";
+import './style.css'
+import Menu from '../../images/menu.svg'
+import ChepLogo from '../../images/chep-logo.png'
+import Cart from '../../images/cart.svg'
 
 const PublicNavbar = () => {
     const auth = useSelector(state => state.auth)
-
+    const [productNum, setProductNum] = useState(0)
+    const cart = useSelector((state) => state.product.cart);
+    useEffect(() => {
+        if (cart && cart._id) {
+            setProductNum(cart.products.reduce((sum, item) => (sum + item.quantity), 0))
+        }
+    }, [cart])
     return (
-        <Navbar bg="light" expand="lg">
-            <Navbar.Brand as={Link} to="/" className="mr-auto">
-                ChepCo
-        </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto"></Nav>
+        <div>
+            <Navbar className="tien-nav-bar">
+                <Link to="/">
+                    <Navbar.Brand >
+                        <img src={ChepLogo} alt="chepLogo" style={{ height: "10vh", marginLeft: "15px" }} />
+                    </Navbar.Brand>
+                </Link>
                 <NavbarLinks user={auth.user} />
+            </Navbar>
 
-            </Navbar.Collapse>
-        </Navbar>
+        </div>
     )
 }
 

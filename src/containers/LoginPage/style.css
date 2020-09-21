@@ -1,0 +1,22 @@
+.tien-login-page-style{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.tien-login-form{
+    margin-bottom: 20vh;
+    width: 30vw;
+    margin-left: 13vw;
+}
+.kep-login-facebook.metro {
+    border-radius: 0;
+    display: none;
+}
+.fb-bnt-tien{
+    display: none !important;
+}
+.tien-arrange-icon{
+    display: flex;
+    justify-content: space-around;
+}

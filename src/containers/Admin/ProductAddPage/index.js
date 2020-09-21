@@ -20,7 +20,7 @@ const ProductAddPage = () => {
         inStock: "",
         availability: "",
         price: "",
-        // images: null,
+        images: null,
     });
     const loading = useSelector((state) => state.product.loading);
     const dispatch = useDispatch();
@@ -46,8 +46,7 @@ const ProductAddPage = () => {
                 inStock: selectedProduct.inStock,
                 availability: selectedProduct.availability,
                 price: selectedProduct.price,
-
-                // images: selectedProduct.images,
+                images: selectedProduct.images,
             }));
         }
     }, [productId, selectedProduct, dispatch]);
@@ -71,10 +70,10 @@ const ProductAddPage = () => {
             inStock,
             availability,
             price,
-            // images,
+            images
         } = formData;
         if (addOrEdit === "Add") {
-            dispatch(productActions.createNewProduct(name, description, category, ratingsAverage, inStock, availability, price)); //,images them khi lam chen hinh
+            dispatch(productActions.createNewProduct(name, description, category, ratingsAverage, inStock, availability, price, images)); //,images them khi lam chen hinh
         } else if (addOrEdit === "Edit") {
             dispatch(productActions.updateProduct(selectedProduct._id, name, description, category, ratingsAverage, inStock, availability, price)); //,images
         }
@@ -99,7 +98,27 @@ const ProductAddPage = () => {
         }
     }, [redirectTo, dispatch, history]);
 
+    const uploadWidget = () => {
+        window.cloudinary.openUploadWidget(
+            {
+                cloud_name: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
+                upload_preset: process.env.REACT_APP_CLOUDINARY_PRESET,
+                tags: ["chepco", "productImages"],
 
+            },
+
+
+            function (error, result) {
+                if (result && result.length) {
+                    setFormData({
+                        ...formData,
+                        images: result.map((res) => res.secure_url),
+                    });
+                }
+            }
+        );
+    };
+    console.log("check form", formData)
     return (
         <div>
 
@@ -178,22 +197,29 @@ const ProductAddPage = () => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-
-
-                {/* <Form.Group>
+                <Form.Group>
+                    <Form.Control
+                        type="file"
+                        name="images"
+                        multiple
+                        accept="image/png image/jpeg image/jpg"
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group>
                     {formData?.images?.map((image) => (
-                        <img
+                        < img
                             src={image}
                             key={image}
                             width="90px"
                             height="60px"
-                            alt="blog images"
+                            alt="Product image"
                         ></img>
                     ))}
                     <Button variant="info" onClick={uploadWidget}>
                         {addOrEdit} Images
-                     </Button>
-                </Form.Group> */}
+              </Button>
+                </Form.Group>
                 <ButtonGroup className="d-flex mb-3">
                     {loading ? (
                         <Button
@@ -230,7 +256,7 @@ const ProductAddPage = () => {
                     </ButtonGroup>
                 )}
             </Form>
-        </div>
+        </div >
     )
 }
 

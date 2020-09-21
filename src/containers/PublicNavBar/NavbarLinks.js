@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { authActions } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-
+import CartIcon from '../../images/cart.svg'
+import Order from '../../images/order.svg'
+import './style.css'
 
 
 const NavbarLinks = ({ user }) => {
@@ -18,55 +20,33 @@ const NavbarLinks = ({ user }) => {
         dispatch(authActions.logout());
     };
     const adminLinks = (
-        <Nav>
-            <Nav.Link
-                as={Link}
-                to="/admin/profile"
 
-            >
-                Admin
-      </Nav.Link>
-            <Nav.Link as={Link} to="/admin/products">
-                admin product view
-      </Nav.Link>
-            <Nav.Link as={Link} to="/admin/orders">
-                admin order view
-      </Nav.Link>
+        <div className="tien-nav-links">
+            <Nav.Link as={Link} to="/admin/profile">Admin</Nav.Link>
+            <Nav.Link as={Link} to="/admin/products">admin product view</Nav.Link>
+            <Nav.Link as={Link} to="/admin/orders">admin order view</Nav.Link>
+            <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+        </div>
 
-            <Nav.Link onClick={handleLogout}>
-                Logout
-      </Nav.Link>
-        </Nav>
     );
     const userLinks = (
-        <Nav>
-            <Nav.Link as={Link} to="/about">
-                About us
-      </Nav.Link>
-            <Nav.Link as={Link} to="/user/dashboard">
-                user dashboard
-      </Nav.Link>
-            <Nav.Link as={Link} to="user/order">
-                Cart ({productNum})
-      </Nav.Link>
 
-            <Nav.Link onClick={handleLogout}>
-                Logout
-      </Nav.Link>
-        </Nav>
+        <div className="tien-nav-links">
+            <Nav.Link as={Link} to="/about">About us</Nav.Link>
+            <Nav.Link as={Link} to="/user/dashboard"><img src={Order} alt="order icon" style={{ width: "3.5vw" }} /></Nav.Link>
+            <Nav.Link as={Link} to="user/order"><img src={CartIcon} alt="cart icon" style={{ width: "3vw" }} /> {productNum}</Nav.Link>
+            <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+        </div>
+
     );
     const publicLinks = (
-        <Nav>
-            <Nav.Link as={Link} to="/register">
-                Register
-      </Nav.Link>
-            <Nav.Link as={Link} to="/login">
-                Login
-      </Nav.Link>
-            <Nav.Link as={Link} to="/about">
-                About us
-      </Nav.Link>
-        </Nav>
+
+        <div className="tien-nav-links">
+            <Nav.Link as={Link} to="/about">About us</Nav.Link>
+            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+            <Nav.Link as={Link} to="/register">Register</Nav.Link>
+        </div>
+
     );
     useEffect(() => {
         if (cart && cart._id) {
