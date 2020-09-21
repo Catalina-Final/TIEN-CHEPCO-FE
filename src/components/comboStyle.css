@@ -1,0 +1,11 @@
+.tien-combo-part{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tien-combo-part img{
+    height: 100vh;
+
+}

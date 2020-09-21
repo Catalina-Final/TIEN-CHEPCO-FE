@@ -1,14 +1,24 @@
 
-.tien-products-background{
-    position: absolute;
-    z-index: 0;
-    border: 1px solid red;
-    display: flex;
-    justify-content: flex-start;
-    margin-left: -8vw;
-    height: 100vh;
-    
+.green{
+    background-color: #5E9194;
 }
+.light-green{
+    background-color: #C2D1CE;
+}
+.yellow{
+    background-color: #F4EFE4;
+}
+
+.tien-products-background{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+.tien-products-background img{
+    
+    height: 100vh; 
+}
+
 .tien-display-layer{
     display: flex;
     align-items: flex-end;
@@ -18,13 +28,14 @@
     z-index: 5;
 }
 .tien-products-list{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     width: 71vw;
-    height:70vh;
+    height: 65vh;
     padding-bottom: 5vh;
+    padding-right: 5vw;
     
    
    position: absolute;
@@ -38,16 +49,17 @@
 }
 
 .tien-products-list-layer{
-    height: 70vh;
+    height: 65vh;
     padding-bottom: 5vh;
     width: 20vw;
     position: relative;
    z-index: 2;
-   background-image: linear-gradient(to left, rgba(255, 255, 255, 0.899)20px, rgba(0,0,0,0));
+   background-image: linear-gradient(to left, rgba(255, 255, 255, 0.979)20px, rgba(0,0,0,0));
    display: flex;
    align-items: center;
-   margin-left: 47vw;
+   margin-left: 55vw;
    border-radius: 40px;
+   pointer-events: none;
 }
 .tien-hompage-icon{
     display: flex;
@@ -67,7 +79,13 @@
     width: 30vw ;
     position: relative;
     z-index: 5;
+    border: 1px solid red;
+    margin-left: 9vw;
     
+}
+.yoga-wrapper {
+position: absolute;
+right: 0;
 }
 
 #circle {
@@ -141,7 +159,7 @@ transform: rotateX(0deg)
         height: 100vh;
         display: flex;
         align-items: flex-end;
-        padding-bottom: 8vh;
+        padding-bottom: 3vh;
     }
     .tien-yoga-img svg{
        width: 50vw;

@@ -10,6 +10,7 @@ const loginRequest = (email, password) => async (dispatch) => {
     const name = res.data.data.user.name;
     dispatch(alertActions.setAlert(`Welcome ${name}`, "success"));
     dispatch({ type: types.LOGIN_SUCCESS, payload: res.data.data });
+    dispatch({ type: ADD_PRODUCT_TO_CART, payload: res.data.data.cart })
     api.defaults.headers.common["authorization"] =
       "Bearer " + res.data.data.accessToken;
   } catch (error) {
@@ -24,6 +25,7 @@ const loginFacebookRequest = (access_token) => async (dispatch) => {
     const name = res.data.data.user.name;
     dispatch(alertActions.setAlert(`Welcome ${name}`, "success"));
     dispatch({ type: types.LOGIN_FACEBOOK_SUCCESS, payload: res.data.data });
+    dispatch({ type: ADD_PRODUCT_TO_CART, payload: res.data.data.cart })
     api.defaults.headers.common["authorization"] =
       "Bearer " + res.data.data.accessToken;
   } catch (error) {
@@ -38,6 +40,7 @@ const loginGoogleRequest = (access_token) => async (dispatch) => {
     const name = res.data.data.user.name;
     dispatch(alertActions.setAlert(`Welcome ${name}`, "success"));
     dispatch({ type: types.LOGIN_GOOGLE_SUCCESS, payload: res.data.data });
+    dispatch({ type: ADD_PRODUCT_TO_CART, payload: res.data.data.cart })
     api.defaults.headers.common["authorization"] =
       "Bearer " + res.data.data.accessToken;
   } catch (error) {

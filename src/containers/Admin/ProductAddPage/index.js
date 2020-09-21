@@ -109,16 +109,18 @@ const ProductAddPage = () => {
 
 
             function (error, result) {
-                if (result && result.length) {
+                if (result && result.data && result.data.info && result.data.info.files) {
+                    let a = result.data.info.files
+                    console.log(a)
                     setFormData({
                         ...formData,
-                        images: result.map((res) => res.secure_url),
+                        images: a.map((b) => b.uploadInfo.secure_url),
                     });
                 }
             }
         );
     };
-    console.log("check form", formData)
+
     return (
         <div>
 

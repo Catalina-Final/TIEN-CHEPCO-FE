@@ -17,3 +17,10 @@
 
     
 }
+
+.alert-style {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    z-index: 10000;
+}

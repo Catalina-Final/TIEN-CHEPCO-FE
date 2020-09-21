@@ -1,26 +1,33 @@
 .tien-product-style{
-    margin-left: 5.8vw;
-    /* border: 1px solid red; */
+    margin-left: 3vw;
+    margin-right: 3vw;
     padding-left: 7px;
     padding-right: 7px;
-   padding-bottom: 15px;
+    padding-bottom: 15px;
     border-radius: 40px;
     height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
-    box-shadow:  20px 20px 30px #b0b0b0, 
+    background-color: #ffffff;
+    box-shadow:  10px 10px 20px #b0b0b0, 
              -5px -5px 20px #F4EFE4;
-
-
 }
+
+.empty-tien-product-style{
+    /* margin-left: 3vw;
+    margin-right: 3vw; */
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 15px;
+    border-radius: 40px;
+    height: 50vh;
+}
+
 .tien-product-pic{
     width: 13vw;
-    -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+   
 }
 
 .tien-product-info{
@@ -56,29 +63,50 @@
     display: flex;
     align-self: flex-end;
     margin-bottom: 10px;
+   
+
 }
 .tien-bnt-order{
     border-radius: 50% !important;
     width: 3vw !important;
     height: 5vh;
 background-color: #E8BA6B;
-border: none! important;
-border: 1px solid red;
+border: none;
 
+             
 }
 
 /* for phone */
 @media screen and (max-width: 400px){
 
     .tien-product-style{
-       width: 50vw;
-       height: 80vh;
+       width: 60vw;
+       /* height: 80vh; */
         margin: 10vw;
-        padding: 10vh;
-        
+        padding: 5vh;
+        display: flex;
+        justify-content: space-around;
         box-shadow:  20px 20px 30px #b0b0b0, 
                  -5px -5px 20px #F4EFE4;
     
     }
+    .tien-product-pic{
+        border: 1px solid red;
+        width: 35vw;
+       
+    }
+
+.tien-product-info{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between ;
+    flex-direction: row;
+    background-color: #5E9194;
+    border-radius: 32px;
+    line-height: 10px;
+    width: 55vw;
+    
+
+}
 
 }

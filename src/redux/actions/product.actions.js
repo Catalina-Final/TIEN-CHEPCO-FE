@@ -83,10 +83,11 @@ const updateProduct = (
   name,
   description,
   category,
+  ratingsAverage,
   inStock,
-  price,
   availability,
-  ratingsAverage
+  price,
+  images
 ) => async (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST, payload: null });
   try {
@@ -97,10 +98,11 @@ const updateProduct = (
       name,
       description,
       category,
+      ratingsAverage,
       inStock,
-      price,
       availability,
-      ratingsAverage
+      price,
+      images
     });
 
     dispatch({
