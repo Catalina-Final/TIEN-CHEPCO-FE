@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: center;
     position: absolute;
-    z-index: 5;
+    z-index: 500;
     width: 100vw;
     height: 10vh;
     justify-content: space-between;

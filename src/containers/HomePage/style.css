@@ -99,6 +99,22 @@ transform-origin: bottom;
     transform-origin: bottom;
 }
 
+
+#body, #hand {
+animation: body 1.5s ease-in infinite alternate;
+transform-origin:  top;
+}
+
+@keyframes body{
+    from{
+transform: rotateY(0deg);
+    }to{
+transform: rotateY(360deg)
+    }
+}
+
+
+
 @keyframes move{
     from{
 transform: rotateX(0deg)

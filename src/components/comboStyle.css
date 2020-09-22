@@ -71,3 +71,28 @@
     width: 40vw;
     border: 1px solid red;
 }
+
+#hand-move{
+    animation: handMove 1.5s ease-in infinite alternate;
+    transform-origin:  top;
+}
+#trolly-move{
+    animation: trollyMove 1.5s ease-in infinite alternate;
+    transform-origin:  top;
+}
+
+@keyframes handMove {
+    from{
+        transform: rotate(-5deg)
+    }to{
+        transform: rotateX(20deg);
+    }
+
+}
+@keyframes trollyMove {
+    from{
+        transform: rotateX(10deg)
+    }to{
+        transform: rotateY(-15deg)
+    }
+}
