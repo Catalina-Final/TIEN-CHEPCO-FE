@@ -28,9 +28,9 @@ const Product = ({ product, handleClick, handleBuyNow, color }) => {
             <div className={"tien-product-info " + color}>
                 <div className="tien-product-info-left">
                     <h5 style={{ fontWeight: "bold" }}>{product.name}</h5>
-                    <p>
+                    {/* <p>
                         {product.description}
-                    </p>
+                    </p> */}
                     <p>
                         {product.price} ₫
 

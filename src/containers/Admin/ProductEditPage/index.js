@@ -8,7 +8,11 @@ import {
     Button,
     ButtonGroup,
 } from "react-bootstrap";
-
+import './EditProductStyle.css'
+import AddImage from '../../../images/add-images.svg'
+import SubmitIcon from '../../../images/add-button.svg'
+import RemoveIcon from '../../../images/remove-btn.svg'
+import AddEditBg from '../../../images/addedit-bg.svg'
 
 const ProductEditPage = () => {
 
@@ -34,10 +38,10 @@ const ProductEditPage = () => {
     //     setFormData(selectedProduct)
     // }, [selectedProduct]);
 
-
     useEffect(() => {
         if (productId) {
-            if (!selectedProduct) {
+            console.log(selectedProduct)
+            if (!selectedProduct || selectedProduct._id != productId) {
                 dispatch(productActions.getSingleProduct(productId));
             } else {
                 setFormData((formData) => ({
@@ -53,7 +57,7 @@ const ProductEditPage = () => {
                 }));
             }
         }
-    }, [selectedProduct]);
+    }, [productId, selectedProduct]);
 
     useEffect(() => {
         if (redirectTo) {
@@ -96,7 +100,7 @@ const ProductEditPage = () => {
     };
     const handleDelete = () => {
         // TODO : popup confirmation modal
-        dispatch(productActions.deleteBlog(selectedProduct._id));
+        dispatch(productActions.deleteProduct(selectedProduct._id));
     };
 
     if (selectedProduct && selectedProduct.createdBy !== auth.user._id) {
@@ -104,86 +108,104 @@ const ProductEditPage = () => {
     }
 
     return (
-        <div>
-            fdsfds
-            <Form onSubmit={handleSubmit}>
-                <div className="text-center mb-3">
-                    <h1 className="text-primary"> Edit product</h1>
-
+        <div className="tien-add-product-style">
+            <div className="tien-add-body">
+                <div className="tien-add-sidebar">
+                    <div>
+                        <img src={AddEditBg} alt="add edit bg" style={{ width: "30vw" }} />
+                    </div>
                 </div>
-                <Form.Group>
-                    <Form.Control
-                        type="text"
-                        required
-                        placeholder="Product Name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Control
-                        as="textarea"
-                        rows="10"
-                        placeholder="Description"
-                        name="description"
-                        value={formData.description}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Control
-                        as="textarea"
-                        rows="10"
-                        placeholder="Category"
-                        name="category"
-                        value={formData.category}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Control
-                        as="textarea"
-                        rows="10"
-                        placeholder="Ratings Average"
-                        name="ratingsAverage"
-                        value={formData.ratingsAverage}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Control
-                        as="textarea"
-                        rows="10"
-                        placeholder="In Stock"
-                        name="inStock"
-                        value={formData.inStock}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Control
-                        as="textarea"
-                        rows="10"
-                        placeholder="Availability"
-                        name="availability"
-                        value={formData.availability}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Control
-                        as="textarea"
-                        rows="10"
-                        placeholder="Price"
-                        name="price"
-                        value={formData.price}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
+                <div classname="tien-add-content">
+                    <div className="tien-form-input">
+                        <Form onSubmit={handleSubmit}>
+
+                            <Form.Group>
+                                <Form.Control
+                                    type="text"
+                                    plaintext
+                                    required
+                                    placeholder="Product Name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                />
+                                <hr />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    plaintext
+                                    as="textarea"
+                                    rows="10"
+                                    placeholder="Description"
+                                    name="description"
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                />
+                                <hr />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    as="textarea"
+                                    plaintext
+                                    rows="10"
+                                    placeholder="Category"
+                                    name="category"
+                                    value={formData.category}
+                                    onChange={handleChange}
+                                />
+                                <hr />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    as="textarea"
+                                    plaintext
+                                    rows="10"
+                                    placeholder="Ratings Average"
+                                    name="ratingsAverage"
+                                    value={formData.ratingsAverage}
+                                    onChange={handleChange}
+                                />
+                                <hr />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    as="textarea"
+                                    plaintext
+                                    rows="10"
+                                    placeholder="In Stock"
+                                    name="inStock"
+                                    value={formData.inStock}
+                                    onChange={handleChange}
+                                />
+                                <hr />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    as="textarea"
+                                    plaintext
+                                    rows="10"
+                                    placeholder="Availability"
+                                    name="availability"
+                                    value={formData.availability}
+                                    onChange={handleChange}
+                                />
+                                <hr />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    as="textarea"
+                                    plaintext
+                                    rows="10"
+                                    placeholder="Price"
+                                    name="price"
+                                    value={formData.price}
+                                    onChange={handleChange}
+                                />
+                                <hr />
+                            </Form.Group>
 
 
-                {/* <Form.Group>
+                            {/* <Form.Group>
                     {formData?.images?.map((image) => (
                         <img
                             src={image}
@@ -197,42 +219,59 @@ const ProductEditPage = () => {
                         {addOrEdit} Images
                      </Button>
                 </Form.Group> */}
-                <ButtonGroup className="d-flex mb-3">
-                    {loading ? (
-                        <Button
-                            className="mr-3"
-                            variant="primary"
-                            type="button"
-                            disabled
-                        >
-                            <span
-                                className="spinner-border spinner-border-sm"
-                                role="status"
-                                aria-hidden="true"
-                            ></span>
+                            <div>
+                                <ButtonGroup className="tien-btn-wrap">
+                                    {loading ? (
+                                        <Button
+                                            className="mr-3"
+                                            variant="primary"
+                                            type="button"
+                                            disabled
+                                        >
+                                            <span
+                                                className="spinner-border spinner-border-sm"
+                                                role="status"
+                                                aria-hidden="true"
+                                            ></span>
                   Submitting...
-                        </Button>
-                    ) : (
-                            <Button className="mr-3" type="submit" variant="primary">
-                                Submit
-                            </Button>
-                        )}
-                    <Button variant="light" onClick={handleCancel} disabled={loading}>
-                        Cancel
-              </Button>
-                </ButtonGroup>
+                                        </Button>
+                                    ) : (
+                                            <label >
+                                                <img src={SubmitIcon} alt="remove icon" style={{ width: "5vw", cursor: "pointer" }} />
+                                                <Button className="mr-3" type="submit" style={{ display: "none" }}>
+                                                    Submit
+                                    </Button>
+                                            </label>
+                                        )}
+                                    <label>
+                                        <img src={RemoveIcon} alt="remove icon" style={{ width: "5vw", marginLeft: "5vw", cursor: "pointer" }} />
+                                        <Button onClick={handleCancel} disabled={loading} style={{ display: "none" }}>
+                                            Cancel
+                                        </Button>
+                                    </label>
+                                </ButtonGroup>
+                            </div>
 
-                <ButtonGroup className="d-flex">
-                    <Button
-                        variant="danger"
-                        onClick={handleDelete}
-                        disabled={loading}
-                    >
-                        Delete Product
+
+                            <ButtonGroup className="d-flex">
+                                <Button
+                                    style={{ borderRadius: "50px" }}
+                                    variant="danger"
+                                    onClick={handleDelete}
+                                    disabled={loading}
+                                >
+                                    Delete Product
                 </Button>
-                </ButtonGroup>
+                            </ButtonGroup>
 
-            </Form>
+                        </Form>
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
     )
 }

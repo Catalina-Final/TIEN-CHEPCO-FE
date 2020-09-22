@@ -1,0 +1,30 @@
+.tien-order-list-style{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
+}
+.order-body{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    border: 1px solid red;
+    align-items: flex-end;
+}
+.order-sidebar{
+    width: 40vw;
+    height:85vh;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-sidebar svg{
+    width: 30vw;
+}
+.order-content{
+    width: 60vw;
+    height: 85vh;
+    border: 1px solid red;
+}

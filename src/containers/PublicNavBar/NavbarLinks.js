@@ -22,9 +22,9 @@ const NavbarLinks = ({ user }) => {
     const adminLinks = (
 
         <div className="tien-nav-links">
-            <Nav.Link as={Link} to="/admin/profile">Admin</Nav.Link>
-            <Nav.Link as={Link} to="/admin/products">admin product view</Nav.Link>
-            <Nav.Link as={Link} to="/admin/orders">admin order view</Nav.Link>
+            <Nav.Link as={Link} to="/admin/dashboard">Admin</Nav.Link>
+            <Nav.Link as={Link} to="/admin/products">Product's List</Nav.Link>
+            <Nav.Link as={Link} to="/admin/orders">Order's List</Nav.Link>
             <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
         </div>
 

@@ -1,0 +1,50 @@
+.tien-product-list-style{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height:100vh;
+    position: relative;
+    background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
+}
+.tien-admin-product-list{
+    height: 80vh;
+    width: 30vw;
+    overflow: scroll;
+    padding: 15px;
+    margin-right:5vw;
+}
+.add-wrap{
+    border: 1px solid red;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.tien-button-wrap{
+    border: 1px solid red;
+    margin-right: 50px;
+    z-index: 3;
+    margin-top: 25vh;
+}
+.tien-button{
+ display: flex;
+ border: 1px solid red;
+ width: 70px;
+
+}
+.tien-button:hover{
+    cursor: pointer;
+   
+    
+}
+
+
+.tien-product-list-img svg{
+position: absolute;
+border: 1px solid red;
+left: 0;
+width: 50vw;
+bottom:0;
+}

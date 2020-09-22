@@ -1,11 +1,73 @@
-.tien-combo-part{
+.tien-combo-style{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: flex-end;
+    border: 1px solid red;
+
 }
 
-.tien-combo-part img{
+.tien-combo-style img{
     height: 100vh;
+    
 
+}
+.tien-combo-style .tien-combo-body{
+    border: 1px solid red;
+    position: absolute;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.combo-sidebar{
+    border: 1px solid red;
+    height: 85vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.sidebar-trolly{
+    border: 1px solid red;
+    width: 30vw;
+}
+
+
+.combo-content{
+    border: 1px solid red;
+    height: 85vh;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.combo-title{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+.combo-body-detail{
+    width: 100%;
+    height: 70vh;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    
+}
+.combo-script{
+    height: 70vh;
+    width: 20vw;
+    border: 1px solid red;
+
+}
+.combo-img{
+    height: 70vh;
+    width: 40vw;
+    border: 1px solid red;
 }

@@ -22,6 +22,7 @@ const getSingleProduct = (productId) => async (dispatch) => {
   dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST, payload: null });
   try {
     const res = await api.get(`/products/${productId}`);
+    console.log(res.data)
     dispatch({
       type: types.GET_SINGLE_PRODUCT_REQUEST_SUCCESS,
       payload: res.data.data,

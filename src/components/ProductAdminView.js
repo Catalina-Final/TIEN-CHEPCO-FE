@@ -5,44 +5,49 @@ import { productActions } from "../redux/actions/product.actions";
 
 import { Card, Button } from "react-bootstrap";
 import Moment from "react-moment";
-
+import productAdminStyle from './productAdmin.css'
 const ProductAdminView = ({ product, handleClick }) => {
 
-    console.log(product)
     return (
-        // <Card onClick={() => handleClick(product._id)}>
-        <Card>
-            <Card.Text>
-                adding by admin (createBy id)?!
-            </Card.Text>
-            <Card.Body>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Text>
-                    Category:  {product.type}
-                </Card.Text>
 
-                <Card.Text>
-                    {product.price}$
-                </Card.Text>
-                <Card.Text>
-                    {product.ratingsAverage}
-                </Card.Text>
-                <Card.Text>
-                    {product.inStock}
-                </Card.Text>
-                <Card.Text>
-                    {product.availability}
-                </Card.Text>
-                <Card.Text>
-                    <Moment fromNow>{product.createdAt}</Moment>
-                </Card.Text>
-                <Link to={`/admin/products/edit/${product._id}`}>
-                    <Button>
-                        Edit
+        <div >
+            <div style={{ marginTop: "10px" }}>
+                <div className="tien-admin-product-top">
+                    <h4>{product.name}</h4>
+                    <Link to={`/admin/products/edit/${product._id}`}>
+                        <Button className="tien-button-list">
+                            Edit
                     </Button>
-                </Link>
-            </Card.Body>
-        </Card>
+                    </Link>
+                </div>
+                <hr />
+                <p>
+                    Category:  {product.type}
+                </p>
+                <hr />
+                <p>
+                    {product.price} vnd
+                </p>
+                <hr />
+                <p>
+                    {product.ratingsAverage} stars
+                </p>
+                <hr />
+                <p>
+                    {product.inStock} in stock
+                </p>
+                <hr />
+                <p>
+                    {product.availability} available
+                </p>
+                <hr />
+                <p>
+                    Created from <Moment fromNow>{product.createdAt}</Moment>
+                </p>
+                <hr />
+
+            </div>
+        </div>
     )
 }
 

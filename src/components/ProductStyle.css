@@ -3,12 +3,13 @@
     margin-right: 3vw;
     padding-left: 7px;
     padding-right: 7px;
-    padding-bottom: 15px;
+    padding-top:7px;
+    padding-bottom: 7px;
     border-radius: 40px;
     height: 50vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     background-color: #ffffff;
     box-shadow:  10px 10px 20px #b0b0b0, 
@@ -18,15 +19,17 @@
 .empty-tien-product-style{
     /* margin-left: 3vw;
     margin-right: 3vw; */
-    padding-left: 7px;
-    padding-right: 7px;
+    
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 15px;
     border-radius: 40px;
     height: 50vh;
 }
 
 .tien-product-pic{
-    width: 13vw;
+    
+    height:32vh;
    
 }
 

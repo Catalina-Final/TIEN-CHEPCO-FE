@@ -1,0 +1,20 @@
+.tien-button-list{
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: #5E9194;
+    border: none;
+    display: flex;
+    align-items: center;
+    
+   }
+   .tien-button-list:hover {
+       background: #C2D1CE;
+       text-decoration: none !important;
+       color: black; 
+   }
+   .tien-admin-product-top{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }

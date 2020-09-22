@@ -2,8 +2,9 @@
     display: flex;
     border: 1px solid red;
     flex-direction: row;
+    align-items: center;
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     width: 100vw;
     height: 10vh;
     justify-content: space-between;

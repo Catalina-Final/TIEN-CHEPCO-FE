@@ -51,15 +51,16 @@
 .tien-products-list-layer{
     height: 65vh;
     padding-bottom: 5vh;
-    width: 20vw;
+    width: 30vw;
     position: relative;
    z-index: 2;
-   background-image: linear-gradient(to left, rgba(255, 255, 255, 0.979)20px, rgba(0,0,0,0));
+   background-image: linear-gradient(to left, rgb(255, 255, 255)20px, rgba(0,0,0,0));
    display: flex;
    align-items: center;
-   margin-left: 55vw;
+   margin-left: 41vw;
    border-radius: 40px;
    pointer-events: none;
+   
 }
 .tien-hompage-icon{
     display: flex;
@@ -85,7 +86,7 @@
 }
 .yoga-wrapper {
 position: absolute;
-right: 0;
+right: 1vw;
 }
 
 #circle {

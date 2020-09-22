@@ -82,6 +82,10 @@ const HomePage = () => {
                       />
                     ))}
                     {<div className="empty-tien-product-style"></div>}
+                    {<div className="empty-tien-product-style"></div>}
+                    {<div className="empty-tien-product-style"></div>}
+                    {<div className="empty-tien-product-style"></div>}
+                    {<div className="empty-tien-product-style"></div>}
                   </div >
                   <div className="tien-products-list-layer-push">
                     <div className="tien-products-list-layer"></div>
