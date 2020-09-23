@@ -86,20 +86,7 @@ const LoginPage = () => {
             )}
           </Form.Group>
           <div className="tien-arrange-icon">
-            {loading ? (
-              <Button
-                className="btn-block"
-                variant="primary"
-                type="button"
-                disabled
-              >
-                <span
-                  className="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-                Loading...
-              </Button>
+            {loading ? (<></>
             ) : (
 
                 <label style={{ cursor: "pointer" }}>

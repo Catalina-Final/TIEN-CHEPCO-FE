@@ -27,4 +27,33 @@
     width: 60vw;
     height: 85vh;
     border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    padding: 10px;
+
+}
+.tien-order-style{
+    width:80%;
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.admin-order-up{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.admin-order-up-bot{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+.order-detail-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

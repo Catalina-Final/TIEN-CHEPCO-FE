@@ -14,9 +14,8 @@ const UserLayout = () => {
             <PublicNavbar />
             <AlertMsg />
             <Switch>
-
-                <Route exact path="/user/order" component={UserOrder} />
-                <Route exact path="/user/order/shipingInfo" component={UserShipping} />
+                <Route path="/user/order/shipingInfo" component={UserShipping} />
+                <Route path="/user/order" component={UserOrder} />
 
                 <Route exact path="/user/dashboard" component={DashboardPage} />
                 <Route exact path="/user/" component={UserOrder} />

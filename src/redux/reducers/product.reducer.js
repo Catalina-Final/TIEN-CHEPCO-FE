@@ -1,9 +1,10 @@
 import * as types from "../constants/product.constants";
+import * as orderTypes from "../constants/order.constants";
 import calcCart from "../helpers"
 
 const initialState = {
     products: [],
-    totalPageNum: 1,
+
     selectedProduct: null,
     loading: false,
     cart: null,
@@ -26,7 +27,7 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 products: payload.totalProducts,
-                totalPageNum: payload.totalPages,
+
                 loading: false,
             };
 
@@ -67,7 +68,12 @@ const productReducer = (state = initialState, action) => {
         case types.REMOVE_PRODUCT_FROM_CART:
         case types.EDIT_QTY_IN_CART:
             return { ...state, cart: payload }
-
+        case orderTypes.SHIPPING_INFO_REQUEST_SUCCESS:
+            alert("In reducer;")
+            return {
+                ...state,
+                cart: initialState.cart,
+            }
         default:
             return state;
     }

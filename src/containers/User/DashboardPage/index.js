@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { orderActions } from "../../../redux/actions/order.actions";
+import { useHistory, Link } from "react-router-dom";
+import OrderUser from './OrderUser'
 import './UserDashboardStyle.css'
 
 const DashboardPage = () => {
+    const dispatch = useDispatch();
+    const totalOrders = useSelector((state) => state.order.orders)
+
+    console.log("check user orders", totalOrders)
+    useEffect(() => {
+        dispatch(orderActions.ordersUserRequest());
+    }, [dispatch]);
+
+    if (!totalOrders) return <></>
     return (
         <div className="user-dash-style">
             <div className="user-dash-body">
@@ -48,9 +61,18 @@ const DashboardPage = () => {
 
                     </div>
                 </div>
+
                 <div className="user-dash-content">
-                    order's list
+                    {totalOrders.map((order) => (
+                        <OrderUser
+                            order={order}
+                            key={order._id}
+                        />
+                    ))
+
+                    }
                 </div>
+
             </div>
 
         </div>

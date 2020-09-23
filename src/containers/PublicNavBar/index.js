@@ -17,6 +17,8 @@ const PublicNavbar = () => {
     useEffect(() => {
         if (cart && cart._id) {
             setProductNum(cart.products.reduce((sum, item) => (sum + item.quantity), 0))
+        } else {
+            setProductNum(0);
         }
     }, [cart])
     return (

@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { orderActions } from "../../../redux/actions/order.actions";
+import { useHistory, Link } from "react-router-dom";
+import OrderAdmin from './OrderAdmin'
+
 import './AdminOrderListStyle.css'
 
 const OrderListPage = () => {
+    const dispatch = useDispatch();
+    const totalOrders = useSelector((state) => state.order.orders)
+    console.log("admin check orders", totalOrders)
+    useEffect(() => {
+        dispatch(orderActions.ordersAdminRequest());
+    }, [dispatch]);
+
+
+
     return (
         <div className="tien-order-list-style">
             <div className="order-body">
@@ -74,7 +88,14 @@ const OrderListPage = () => {
                     </div>
                 </div>
                 <div className="order-content">
-                    orders here
+                    {totalOrders.map((order) => (
+                        <OrderAdmin
+                            order={order}
+                            key={order._id}
+                        />
+                    ))
+
+                    }
                 </div>
             </div>
 

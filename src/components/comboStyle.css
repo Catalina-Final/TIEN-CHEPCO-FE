@@ -73,7 +73,7 @@
 }
 
 #hand-move{
-    animation: handMove 1.5s ease-in infinite alternate;
+    animation: handMove 1s ease-in infinite alternate;
     transform-origin:  top;
 }
 #trolly-move{
@@ -85,7 +85,7 @@
     from{
         transform: rotate(-5deg)
     }to{
-        transform: rotateX(20deg);
+        transform: rotateX(10deg);
     }
 
 }

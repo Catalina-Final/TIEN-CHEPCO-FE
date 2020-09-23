@@ -34,7 +34,7 @@ const NavbarLinks = ({ user }) => {
         <div className="tien-nav-links">
             <Nav.Link as={Link} to="/about">About us</Nav.Link>
             <Nav.Link as={Link} to="/user/dashboard"><img src={Order} alt="order icon" style={{ width: "3.5vw" }} /></Nav.Link>
-            <Nav.Link as={Link} to="user/order"><img src={CartIcon} alt="cart icon" style={{ width: "3vw" }} /> {productNum}</Nav.Link>
+            <Nav.Link as={Link} to="/user/order"><img src={CartIcon} alt="cart icon" style={{ width: "3vw" }} /> {productNum}</Nav.Link>
             <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
         </div>
 

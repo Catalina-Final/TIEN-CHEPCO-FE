@@ -33,23 +33,6 @@ const HomePage = () => {
   }
   const colors = ["green", "light-green", "yellow"]
 
-  // const uploadWidget = () => {
-  //   window.cloudinary.openUploadWidget(
-  //     {
-  //       cloud_name: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
-  //       upload_preset: process.env.REACT_APP_CLOUDINARY_PRESET,
-  //       tags: ["socialBlog", "blogImages"],
-  //     },
-  //     function (error, result) {
-  //       if (result && result.length) {
-  //         setFormData({
-  //           ...formData,
-  //           images: result.map((res) => res.secure_url),
-  //         });
-  //       }
-  //     }
-  //   );
-  // };
 
   return (
     <div >

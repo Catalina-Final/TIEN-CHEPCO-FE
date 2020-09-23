@@ -1,7 +1,7 @@
 .user-dash-style{
     width: 100vw;
     height: 100vh;
-    border: 1px solid red;
+    
     display: flex;
     align-items: flex-end;
     background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
@@ -9,14 +9,14 @@
 .user-dash-body{
     width: 100vw;
     height: 85vh;
-    border: 1px solid red;
+    
     display: flex;
    
 }
 .user-dash-sidebar{
     width: 40vw;
     height: 85vh;
-    border: 1px solid red;
+    
     display: flex;
     align-items: flex-end;
     padding: 10vh;
@@ -24,8 +24,50 @@
 .user-dash-sidebar svg{
     width: 30vw;
 }
+
 .user-dash-content{
     width: 60vw;
-    height: 85vh;
-    border: 1px solid red;
+    height: 75vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: scroll;
+
+}
+.order-style-wrap{
+    border-bottom: 1px solid black;
+}
+
+.user-infor{
+    
+    width: 60vw;
+    display: flex;
+    padding: 10px;
+    
+}
+.user-infor-side{
+    width: 30vw;
+
+}
+.user-infor-right{
+   
+    width: 30vw;
+}
+.user-order-wrap{
+    
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+}
+.user-order{
+    
+    display: flex;
+    flex-direction: column;
+    
+    width: 50vw;
+}
+.user-order-top{
+    display: flex;
+    justify-content: space-between;
 }

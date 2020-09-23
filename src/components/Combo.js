@@ -103,12 +103,12 @@ const Combo = () => {
                         <h3>Combo</h3>
                     </div>
                     <div className="combo-body-detail">
-                    <div className="combo-script">
+                        <div className="combo-script">
 
-                    </div>
-                    <div className="combo-img">
+                        </div>
+                        <div className="combo-img">
 
-                    </div>
+                        </div>
                     </div>
 
                 </div>
