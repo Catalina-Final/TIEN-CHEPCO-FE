@@ -1,0 +1,22 @@
+.footer-style{
+    width: 100vw;
+    height: 70vh;
+    border: 1px solid red;
+    
+}
+.footer-style img{
+    width: 100vw;
+    height: 70vh;
+    transition-timing-function: ease-out;
+}
+/* #footer{
+    animation: footMove 1s infinite alternate;
+    transform-origin: top;
+} */
+/* @keyframes footMove{
+    from{
+transform: rotateX(0deg);
+    }to{
+transform: rotateX(20deg);
+    }
+} */

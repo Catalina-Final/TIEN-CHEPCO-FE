@@ -11,6 +11,7 @@ import BackGround from '../../images/bg.svg'
 import FilterIcon from '../../images/Filter-icon.svg'
 import ScrollRight from '../../images/scroll-right.svg'
 import Combo from '../../components/Combo'
+import Footer from '../../components/Footer'
 import BreakBg from '../../images/break-bg.png'
 
 const HomePage = () => {
@@ -179,6 +180,9 @@ const HomePage = () => {
       </div>
       <div>
         <StoryPage />
+      </div>
+      <div>
+        <Footer />
       </div>
 
     </div>
