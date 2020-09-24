@@ -191,13 +191,13 @@ const HomePage = () => {
           )}
       </div>
       <div className="text-center m-5">
-        <img src={BreakBg} width="700px" alt="break background" />
+        <img src={BreakBg} width="700px" alt="break background" className="img-fluid" />
       </div>
       <div>
         <Combo />
       </div>
       <div className="text-center m-5">
-        <img src={BreakBg} width="700px" alt="break background" />
+        <img src={BreakBg} width="700px" alt="break background" className="img-fluid" />
       </div>
       <div>
         <StoryPage />
