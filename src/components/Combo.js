@@ -105,7 +105,7 @@ const Combo = () => {
                 <div className="combo-content">
 
                     <div className="combo-content-title">
-                        <h4>Combo</h4>
+                        <h4 id="combo"> Combo</h4>
                     </div>
 
                     <div className="combo-content-bot">

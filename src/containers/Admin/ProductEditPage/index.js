@@ -44,7 +44,7 @@ const ProductEditPage = () => {
             if (!selectedProduct || selectedProduct._id != productId) {
                 dispatch(productActions.getSingleProduct(productId));
             } else {
-                setFormData((formData) => ({
+                setFormData({
                     ...formData,
                     name: selectedProduct.name,
                     description: selectedProduct.description,
@@ -54,7 +54,7 @@ const ProductEditPage = () => {
                     availability: selectedProduct.availability,
                     price: selectedProduct.price,
                     // images: selectedProduct.images,
-                }));
+                });
             }
         }
     }, [productId, selectedProduct]);
@@ -102,9 +102,11 @@ const ProductEditPage = () => {
         // TODO : popup confirmation modal
         dispatch(productActions.deleteProduct(selectedProduct._id));
     };
+    console.log(auth.user._id)
+    console.log(selectedProduct)
 
     if (selectedProduct && selectedProduct.createdBy !== auth.user._id) {
-        return <div> Resource not found </div>
+        return <div> anhhhhhh </div>
     }
 
     return (

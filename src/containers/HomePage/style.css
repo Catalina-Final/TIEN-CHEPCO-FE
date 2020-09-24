@@ -28,7 +28,7 @@
     z-index: 5;
 }
 .tien-products-list{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -68,7 +68,7 @@
    align-items: center;
     position: absolute;
     z-index: 10;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     
     width: 77vw;
     margin-top: 15vh;
@@ -86,7 +86,7 @@
     width: 30vw ;
     position: relative;
     z-index: 5;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-left: 9vw;
     
 }
@@ -162,7 +162,7 @@ transform: rotateX(0deg)
        justify-content: flex-start;
        flex-direction: column;
        padding: 3vh;
-       border: 1px solid red;
+       /* border: 1px solid red; */
     }
     
     
@@ -192,7 +192,7 @@ transform: rotateX(0deg)
     }
     .tien-yoga-img svg{
        width: 50vw;
-       border: 1px solid red;
+       /* border: 1px solid red; */
 
         
     } 

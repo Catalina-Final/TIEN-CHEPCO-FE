@@ -25,7 +25,7 @@ const getSingleProduct = (productId) => async (dispatch) => {
     console.log(res.data)
     dispatch({
       type: types.GET_SINGLE_PRODUCT_REQUEST_SUCCESS,
-      payload: res.data,
+      payload: res.data.data,
     });
   } catch (error) {
     dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST_FAILURE, payload: error });

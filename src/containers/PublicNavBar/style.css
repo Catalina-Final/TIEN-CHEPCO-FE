@@ -1,6 +1,6 @@
 .tien-nav-bar{
     display: flex;
-    border: 1px solid red;
+    
     flex-direction: row;
     align-items: center;
     position: absolute;
@@ -8,6 +8,8 @@
     width: 100vw;
     height: 10vh;
     justify-content: space-between;
+   
+
 }
 .tien-nav-links {
     display: flex;
