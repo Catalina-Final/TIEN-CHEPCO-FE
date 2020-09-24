@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { productActions } from "../../redux/actions/product.actions";
 import { useHistory, Link } from "react-router-dom";
+import { Link as tLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import Product from "../../components/Product"
 import { Button, Row } from "react-bootstrap"
 import ClipLoader from "react-spinners/ClipLoader";
@@ -35,6 +36,26 @@ const HomePage = () => {
   }
   const colors = ["green", "light-green", "yellow"]
 
+  // useEffect(() => {
+  //   Events.scrollEvent.register('begin', function (to, element) {
+  //   });
+
+  //   Events.scrollEvent.register('end', function (to, element) {
+  //   });
+
+  //   scrollSpy.update();
+  // }, [])
+
+  // const scrollToTop = () => {
+  //   scroll.scrollToTop();
+  // }
+
+  // const scrollToBottom = () => {
+  //   scroll.scrollToBottom();
+  // }
+
+  // const handleSetActive = (event) => {
+  // }
 
   return (
     <div >
