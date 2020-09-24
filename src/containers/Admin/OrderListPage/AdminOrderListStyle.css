@@ -9,13 +9,13 @@
     height: 85vh;
     width: 100%;
     display: flex;
-    border: 1px solid red;
+    
     align-items: flex-end;
 }
 .order-sidebar{
     width: 40vw;
     height:85vh;
-    border: 1px solid red;
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,7 @@
 .order-content{
     width: 60vw;
     height: 85vh;
-    border: 1px solid red;
+   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,4 +56,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+.btn-outline-info{
+    border-radius: 50px !important;
+    width: 7vw;
 }

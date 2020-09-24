@@ -9,7 +9,7 @@ const UserOrder = () => {
     const loading = useSelector((state) => state.auth.loading);
     const cart = useSelector((state) => state.product.cart);
     // const productNum = cart.length > 0 ? cart.reduce((sum, product) => (sum + product.qty), 0) : 0;
-    // console.log("check cart", cart)
+    console.log("check cart", cart)
     // console.log("product num", productNum)q
     return (
         <div className="tien-add-cart-style">
@@ -141,7 +141,7 @@ const UserOrder = () => {
                         ))}
                     </div>
                     <div className="cart-products-send">
-                        <Link to="/user/order/shipingInfo">
+                        <Link to="/user/order/shipingInfo" className={cart?.products.length < 1 ? "disabled-link" : ""} >
                             <label>
                                 <div className="cart-send-style">
                                     <svg viewBox="0 0 201 201" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +152,6 @@ const UserOrder = () => {
                                     </svg>
 
                                 </div>
-                                <Button style={{ display: "none" }}>take order</Button>
                             </label>
 
                         </Link>

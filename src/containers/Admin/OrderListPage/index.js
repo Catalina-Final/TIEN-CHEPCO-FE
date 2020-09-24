@@ -9,13 +9,15 @@ import './AdminOrderListStyle.css'
 const OrderListPage = () => {
     const dispatch = useDispatch();
     const totalOrders = useSelector((state) => state.order.orders)
-    console.log("admin check orders", totalOrders)
+
     useEffect(() => {
         dispatch(orderActions.ordersAdminRequest());
     }, [dispatch]);
 
 
-
+    // if (!totalOrders || totalOrders.length === 0) return <></>
+    console.log("admin check orders", totalOrders)
+    if (!totalOrders || !(totalOrders.length >= 0)) return <>Loading </>
     return (
         <div className="tien-order-list-style">
             <div className="order-body">

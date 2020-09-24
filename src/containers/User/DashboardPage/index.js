@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { orderActions } from "../../../redux/actions/order.actions";
 import { useHistory, Link } from "react-router-dom";
@@ -8,13 +8,13 @@ import './UserDashboardStyle.css'
 const DashboardPage = () => {
     const dispatch = useDispatch();
     const totalOrders = useSelector((state) => state.order.orders)
-
-    console.log("check user orders", totalOrders)
+    console.log("dsadsadasdad", totalOrders)
     useEffect(() => {
         dispatch(orderActions.ordersUserRequest());
     }, [dispatch]);
 
-    if (!totalOrders) return <></>
+    if (!totalOrders || totalOrders.length === 0) return <></>
+
     return (
         <div className="user-dash-style">
             <div className="user-dash-body">

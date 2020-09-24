@@ -20,7 +20,6 @@ const orderReducer = (state = initialState, action) => {
 
             return { ...state, orders: payload } //???
         case types.ORDERS_ADMIN_REQUEST_SUCCESS:
-
             return {
                 ...state,
                 orders: payload.totalOrders,

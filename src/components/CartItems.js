@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { productActions } from "../redux/actions";
 import './CartItemStyle.css'
@@ -7,7 +7,7 @@ import './CartItemStyle.css'
 
 const CartItems = ({ chosenItem }) => {
 
-    const [quantity, setQuantity] = React.useState(1)
+    const [quantity, setQuantity] = React.useState(chosenItem?.quantity)
     const dispatch = useDispatch()
     return (
         <div>
@@ -32,7 +32,8 @@ const CartItems = ({ chosenItem }) => {
                     </label>
                 </div>
                 <div className="amount-quantity">
-                    <p>{chosenItem?.quantity}</p>
+                    {/* <p>{chosenItem?.quantity}</p> */}
+                    <p>{quantity}</p>
                 </div>
                 <div className="remove-item-quantity">
                     <label>
@@ -54,17 +55,19 @@ const CartItems = ({ chosenItem }) => {
                             </defs>
                         </svg>
 
-                        <Button style={{ display: "none" }} onClick={() => setQuantity(quantity => quantity - 1 > 0 ? quantity - 1 : 1)}>down</Button>
+                        <Button style={{ display: "none" }} onClick={() => {
+                            setQuantity(quantity => quantity - 1 > 0 ? quantity - 1 : 1)
+                        }}>down</Button>
                     </label>
                 </div>
                 <div className="confirm-remove-product">
                     <div>
                         <label style={{ cursor: "pointer" }}>
-                            <p>Thêm</p>
+                            <p>Confirm</p>
                             <Button
                                 style={{ display: "none" }}
                                 onClick={() => dispatch(productActions.updateProductFromCart(chosenItem.product._id, quantity))}
-                            >Thêm</Button>
+                            >Confirm</Button>
                         </label>
                     </div>
                     <div>

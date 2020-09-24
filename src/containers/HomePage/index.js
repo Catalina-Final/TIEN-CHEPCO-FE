@@ -5,6 +5,7 @@ import { useHistory, Link } from "react-router-dom";
 import Product from "../../components/Product"
 import { Button, Row } from "react-bootstrap"
 import ClipLoader from "react-spinners/ClipLoader";
+import StoryPage from "../StoryPage"
 import './style.css'
 import BackGround from '../../images/bg.svg'
 import FilterIcon from '../../images/Filter-icon.svg'
@@ -38,8 +39,35 @@ const HomePage = () => {
     <div >
       <div className="tien-hompage-icon">
         <h3>Best Sellers</h3>
-        <img src={FilterIcon} alt="filter icon" style={{ width: "6vw", paddingTop: "20px" }} />
-        <img src={ScrollRight} alt="scroll right" style={{ width: "5vw" }} />
+        <span className="scroll-down-combo">
+          <div style={{ width: "6vw", paddingTop: "20px" }}>
+            <svg viewBox="0 0 138 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Filter icon - designed by tranmautritam">
+                <g id="Mask Copy" filter="url(#filter0_f)">
+                  <rect x="41" y="57" width="56" height="31" rx="15.5" fill="#A0BBC8" />
+                </g>
+                <circle id="Oval" cx="69" cy="36" r="36" fill="#C2D1CE" />
+                <g id="sort-tool">
+                  <path id="Path" d="M61 36H77" stroke="#464185" stroke-width="2" stroke-linecap="square" />
+                  <path id="Path_2" d="M58 30H80" stroke="#464185" stroke-width="2" stroke-linecap="square" />
+                  <path id="Path_3" d="M64 42H74" stroke="#464185" stroke-width="2" stroke-linecap="square" />
+                </g>
+              </g>
+              <defs>
+                <filter id="filter0_f" x="0.225773" y="16.2258" width="137.548" height="112.548" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                  <feGaussianBlur stdDeviation="20.3871" result="effect1_foregroundBlur" />
+                </filter>
+              </defs>
+            </svg>
+
+          </div>
+
+          <img src={ScrollRight} alt="scroll right" style={{ width: "5vw" }} />
+        </span>
+
+
       </div>
       <div>
         {loading ? (
@@ -145,6 +173,12 @@ const HomePage = () => {
       </div>
       <div>
         <Combo />
+      </div>
+      <div className="text-center m-5">
+        <img src={BreakBg} width="700px" alt="break background" />
+      </div>
+      <div>
+        <StoryPage />
       </div>
 
     </div>

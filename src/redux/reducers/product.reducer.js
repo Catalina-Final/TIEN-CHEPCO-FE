@@ -4,7 +4,7 @@ import calcCart from "../helpers"
 
 const initialState = {
     products: [],
-
+    isOrderFinished: false,
     selectedProduct: null,
     loading: false,
     cart: null,
@@ -21,7 +21,9 @@ const productReducer = (state = initialState, action) => {
         case types.CREATE_PRODUCT_REQUEST:
         case types.UPDATE_PRODUCT_REQUEST:
         case types.DELETE_PRODUCT_REQUEST:
-            return { ...state, loading: true };
+        case orderTypes.SHIPPING_INFO_REQUEST:
+
+            return { ...state, loading: true, isOrderFinished: false };
 
         case types.PRODUCT_REQUEST_SUCCESS:
             return {
@@ -53,6 +55,9 @@ const productReducer = (state = initialState, action) => {
         case types.DELETE_PRODUCT_FAILURE:
             return { ...state, loading: false };
 
+        case orderTypes.SHIPPING_INFO_REQUEST_FAILURE:
+            return { ...state, loading: false, isOrderFinished: false };
+
         case types.CREATE_PRODUCT_SUCCESS:
             return { ...state, loading: false, redirectTo: "__GO_BACK__" };
 
@@ -69,10 +74,11 @@ const productReducer = (state = initialState, action) => {
         case types.EDIT_QTY_IN_CART:
             return { ...state, cart: payload }
         case orderTypes.SHIPPING_INFO_REQUEST_SUCCESS:
-            alert("In reducer;")
             return {
                 ...state,
-                cart: initialState.cart,
+                cart: null,
+                loading: false,
+                isOrderFinished: true,
             }
         default:
             return state;

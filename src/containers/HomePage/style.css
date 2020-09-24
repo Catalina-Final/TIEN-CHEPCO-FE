@@ -67,11 +67,17 @@
     justify-content: space-around;
    align-items: center;
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     border: 1px solid red;
+    
     width: 77vw;
     margin-top: 15vh;
 }
+.scroll-down-combo{
+    display: flex;
+    cursor: pointer;
+}
+
 .tien-home-bg{
     display: flex;
     align-items: center;
@@ -101,13 +107,19 @@ transform-origin: bottom;
 
 
 #body, #hand {
-animation: body 1.5s ease-in infinite alternate;
+animation: body 3s ease-in infinite alternate;
 transform-origin:  top;
 }
 
+#sort-tool{
+    animation: leaveMove 1s ease-in-out infinite alternate;
+    transform-origin: bottom;
+    width: 5vw;
+    }
+
 @keyframes body{
     from{
-transform: rotateY(0deg);
+transform: rotateY(-15deg);
     }to{
 transform: rotateY(360deg)
     }

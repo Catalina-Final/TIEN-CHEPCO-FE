@@ -14,6 +14,7 @@ const NavbarLinks = ({ user }) => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const loading = useSelector((state) => state.auth.loading);
     const cart = useSelector((state) => state.product.cart);
+    console.log("==========", cart)
     const [productNum, setProductNum] = useState(0)
     const dispatch = useDispatch();
     const handleLogout = () => {
@@ -51,6 +52,9 @@ const NavbarLinks = ({ user }) => {
     useEffect(() => {
         if (cart && cart._id) {
             setProductNum(cart.products.reduce((sum, item) => (sum + item.quantity), 0))
+        }
+        if (cart === null) {
+            setProductNum(0)
         }
     }, [cart])
 

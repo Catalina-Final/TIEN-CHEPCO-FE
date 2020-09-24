@@ -32,12 +32,12 @@ const OrderAdmin = (order, key) => {
                     <p>Đơn hàng: {order.order.shipping.fullName}</p>
 
                     <p>Thanh toán: {order.order.paid ? "Paid" : "Pending"}</p>
-                    <Button onClick={handleChange}></Button>
+                    <Button variant="outline-info" onClick={handleChange}>Check</Button>
                 </div>
                 <p>Ngày: {moment(time).format('L')}</p>
                 <p>Điện thoại: {order.order.shipping.phone}</p>
                 <div className="admin-order-up-bot">
-                    <div style={{ border: "1px solid red", width: "30vw", height: "5vh", overflow: "scroll" }}>
+                    <div style={{ width: "30vw", height: "5vh", overflow: "scroll" }}>
                         <p>Địa chỉ: {order.order.shipping.address}</p>
                     </div>
 

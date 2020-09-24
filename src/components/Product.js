@@ -36,7 +36,8 @@ const Product = ({ product, handleClick, handleBuyNow, color }) => {
 
                         </p>
                     <p>
-                        {product.ratingsAverage}
+                        {/* {product.ratingsAverage} */}
+                        ⭐️⭐️⭐️⭐️⭐️
                     </p>
                 </div>
                 <div className="tien-product-info-bnt"   >

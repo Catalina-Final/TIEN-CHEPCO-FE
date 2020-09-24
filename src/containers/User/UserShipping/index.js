@@ -14,10 +14,11 @@ import {
 const UserShipping = () => {
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.product.loading);
-    const products = useSelector((state) => state.product.cart);
+    const isOrderFinished = useSelector((state) => state.product.isOrderFinished);
+    const cart = useSelector((state) => state.product.cart);
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const history = useHistory();
-    console.log("products", products)
+    console.log("cart", cart)
 
 
     const [formData, setFormData] = useState({
@@ -34,9 +35,16 @@ const UserShipping = () => {
         const { fullName, phone, address } = formData;
 
         dispatch(orderActions.createOrder(fullName, phone, address));
-        history.push("/user/dashboard");
     };
-
+    useEffect(() => {
+        if (cart?.products.length < 1) {
+            history.push("/")
+        }
+    }, [cart])
+    useEffect(() => {
+        if (!loading && isOrderFinished)
+            history.push("/user/dashboard");
+    }, [loading, isOrderFinished])
 
     return (
         <div className="shipping-info-style">

@@ -14,7 +14,7 @@ const createOrder = (fullName, phone, address) => async (dispatch) => {
                 address,
             }
         );
-        alert("In actions")
+
         dispatch({
             type: types.SHIPPING_INFO_REQUEST_SUCCESS,
             payload: res.data.data,
