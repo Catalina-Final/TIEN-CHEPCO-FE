@@ -51,7 +51,7 @@ const LoginPage = () => {
 
   return (
     <div className="tien-login-page-style">
-      <div style={{ border: "1px solid red" }}>
+      <div >
         <img src={LoginBg} alt="login bg" style={{ height: "100vh" }} />
       </div>
       <Col md={{ span: 6, offset: 3 }}>
