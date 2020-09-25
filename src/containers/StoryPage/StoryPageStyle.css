@@ -1,13 +1,13 @@
 .story-page-style{
     width: 100vw;
     height: 100vh;
-    border: 1px solid red;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .story-content{
-    border: 1px solid red;
+    
     height: 85vh;
     width: 80vw;
     display: flex;
@@ -17,7 +17,7 @@
 .story-quote{
     display: flex;
     align-items: center;
-    border: 1px solid red;
+    
     
 }
 blockquote {
@@ -28,6 +28,7 @@ blockquote {
 	position: relative;
 	margin: 0;
 	padding: .5rem;
+	font-family: 'Special Elite', cursive !important;
 }
 
 blockquote:before,

@@ -1,22 +1,24 @@
 .footer-style{
     width: 100vw;
     height: 70vh;
-    border: 1px solid red;
+    
+    display: flex;
     
 }
-.footer-style img{
-    width: 100vw;
-    height: 70vh;
-    transition-timing-function: ease-out;
+.footer-img-bg{
+    position: absolute;
+    z-index: 0;
+    
 }
-/* #footer{
-    animation: footMove 1s infinite alternate;
-    transform-origin: top;
-} */
-/* @keyframes footMove{
-    from{
-transform: rotateX(0deg);
-    }to{
-transform: rotateX(20deg);
-    }
-} */
+.footer-chat{
+    
+    z-index:100;
+    width: 100vw;
+    
+    display: flex;
+    justify-content: center;
+}
+.footer-chat-img svg{
+    width: 20vw;
+
+}

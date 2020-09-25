@@ -27,7 +27,7 @@ const Product = ({ product, handleClick, handleBuyNow, color }) => {
 
             <div className={"tien-product-info " + color}>
                 <div className="tien-product-info-left">
-                    <h5 style={{ fontWeight: "bold" }}>{product.name}</h5>
+                    <p style={{ fontWeight: "bold" }}>{product.name}</p>
                     {/* <p>
                         {product.description}
                     </p> */}

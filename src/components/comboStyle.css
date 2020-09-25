@@ -48,6 +48,7 @@
     display: flex;
     justify-content: center;
     height: 10vh;
+    
 }
 .combo-content-bot{
     display: flex;
@@ -64,15 +65,15 @@
     border-radius: 40px;
   }
   
-  .tien-box  > img {
-    width: 200%;
+  .tien-box > a  > img {
+    width: 150%;
     height: calc(100% - 10vh);
     object-fit: cover; 
     transition: .5s;
     opacity: 0.6;
   }
   
-  .tien-box > span {
+  .tien-box > a > span {
     font-size: 1.2rem;
     display: block;
     text-align: center;
@@ -90,7 +91,7 @@
       flex: 1 1 50%;
       
  }
-  .tien-box:hover  > img {
+  .tien-box:hover > a > img {
     width: 100%;
     height: 100%;
     opacity: 1;

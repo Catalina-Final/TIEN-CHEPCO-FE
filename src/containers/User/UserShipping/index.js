@@ -66,7 +66,10 @@ const UserShipping = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
-                                    type="text"
+                                    type="number"
+                                    id="replyNumber"
+                                    min="0"
+                                    data-bind="value:replyNumber"
                                     plaintext
                                     required
                                     placeholder="Phone Number"

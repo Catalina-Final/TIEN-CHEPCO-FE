@@ -112,11 +112,10 @@ const Combo = () => {
 
                         <div className="tien-box">
                             <Link to="/products/5f68dbb352631514abbb2868">
-                                <img src={Cover1} alt="img cover 1" />
+                                <img src={Cover1} alt="img cover 2" />
                                 <span>Gói Tháng</span>
                             </Link >
                         </div>
-
                         <div className="tien-box">
                             <Link to="/products/5f68dc0a52631514abbb2869">
                                 <img src={Cover2} alt="img cover 2" />

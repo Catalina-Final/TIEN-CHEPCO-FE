@@ -13,8 +13,18 @@ const Routes = (props) => {
   const loading = useSelector((state) => state.auth.loading);
   return (
     <Switch>
-      <PrivateRoute path="/admin" component={AdminLayout} isAuthenticated={auth.user.roles === "admin" ? true : false} loading={loading} />
-      <PrivateRoute path="/user" component={UserLayout} isAuthenticated={auth.user.roles === "user" ? true : false} loading={loading} />
+      <PrivateRoute
+        path="/admin"
+        component={AdminLayout}
+        isAuthenticated={auth.user.roles === "admin" ? true : false}
+        loading={loading} />
+
+      <PrivateRoute
+        path="/user"
+        component={UserLayout}
+        isAuthenticated={auth.user.roles === "user" ? true : false}
+        loading={loading} />
+
       <Route path="/" component={PublicLayout} />
     </Switch>
   );

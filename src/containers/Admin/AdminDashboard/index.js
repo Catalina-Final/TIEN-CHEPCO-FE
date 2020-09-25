@@ -16,7 +16,7 @@ const AdminDashboard = () => {
     if (!totalOrders || !(totalOrders.length >= 0)) return <>Loading </>
 
     var orderPrice = totalOrders.filter(order => order.paid).map((item) => item.totalPrice)
-    var time = totalOrders.filter(order => order.paid).map((item) => item.createdAt)
+    var time = totalOrders.filter(order => order.paid).map((item) => item.createdAt[0])
     var totalOrderPrice = orderPrice.reduce((acc, curr) => acc + curr)
     var shipping = totalOrders.filter(order => order.paid).map((item) => item.shipping)
 
@@ -35,27 +35,41 @@ const AdminDashboard = () => {
                             <tr>
                                 <th>Ngày</th>
                                 <th>Người mua</th>
-                                <th>Điện thoại</th>
+
                                 <th>Thanh Toán</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>{moment(time).format('L')}</td>
-                                {shipping && shipping.map((info) => (
+
+                            <td>{moment(time).format('L')}</td>
+                            <td>{shipping && shipping.map((info) => (
+                                <>
+                                    <div className="d-flex justy-content-center">
+                                        <th style={{ width: "15vw" }}>{info.fullName}</th>
+                                        <th style={{ width: "15vw" }}>Phone: {info.phone}</th>
+                                    </div>
+                                </>
+                            ))}
+                            </td>
+                            <th>
+                                {totalOrders.filter(order => order.paid).map((item) => (
                                     <>
-                                        <td>{info.fullName}</td>
-                                        <td>{info.phone}</td>
+                                        <tbody>
+                                            <td>{item.totalPrice} vnd</td>
+
+                                        </tbody>
                                     </>
                                 ))}
-                                <td>{orderPrice}</td>
-                            </tr>
+
+                            </th>
 
                         </tbody>
-                        <thead>
-                            <tr>Tổng doanh thu: {totalOrderPrice}</tr>
-                        </thead>
+
+
+
+
                     </Table>
+                    <p>Tổng doanh thu: {totalOrderPrice} vnd</p>
                 </div>
             </div>
         </div>

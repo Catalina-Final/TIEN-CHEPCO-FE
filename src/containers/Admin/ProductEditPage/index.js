@@ -102,6 +102,12 @@ const ProductEditPage = () => {
         // TODO : popup confirmation modal
         dispatch(productActions.deleteProduct(selectedProduct._id));
     };
+
+    const handleChangeCat = (e) => {
+        if (e.target.name) {
+            setFormData({ ...formData, category: e.target.name })
+        }
+    }
     console.log(auth.user._id)
     console.log(selectedProduct)
 
@@ -146,20 +152,27 @@ const ProductEditPage = () => {
                                 <hr />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Control
-                                    as="textarea"
-                                    plaintext
-                                    rows="10"
-                                    placeholder="Category"
-                                    name="category"
-                                    value={formData.category}
-                                    onChange={handleChange}
-                                />
+                                <div className="tien-checkbox-type">
+                                    <Form.Check
+                                        name="milk"
+                                        label="milk"
+                                        onChange={handleChangeCat}
+                                        value={formData.category}
+                                        id="5f606eec29c5b42a53c38672"
+                                    />
+                                    <Form.Check
+                                        name="tea"
+                                        label="tea"
+                                        onChange={handleChangeCat}
+                                        value={formData.category}
+                                        id="5f6073583b66ed2d25aebf45"
+                                    />
+                                </div>
                                 <hr />
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
-                                    as="textarea"
+                                    type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     plaintext
                                     rows="10"
                                     placeholder="Ratings Average"
@@ -171,7 +184,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
-                                    as="textarea"
+                                    type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     plaintext
                                     rows="10"
                                     placeholder="In Stock"
@@ -183,7 +196,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
-                                    as="textarea"
+                                    type="number"
                                     plaintext
                                     rows="10"
                                     placeholder="Availability"
@@ -195,7 +208,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
-                                    as="textarea"
+                                    type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     plaintext
                                     rows="10"
                                     placeholder="Price"

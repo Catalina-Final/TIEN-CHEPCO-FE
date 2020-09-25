@@ -172,7 +172,7 @@ const ProductAddPage = () => {
                                 <hr />
                             </Form.Group>
 
-                            <Form.Group>
+                            {/* <Form.Group>
                                 <Form.Control
                                     plaintext
                                     as="textarea"
@@ -183,7 +183,7 @@ const ProductAddPage = () => {
                                     onChange={handleChange}
                                 />
                                 <hr />
-                            </Form.Group>
+                            </Form.Group> */}
                             <Form.Group>
                                 <div className="tien-checkbox-type">
                                     <Form.Check
@@ -207,7 +207,7 @@ const ProductAddPage = () => {
                             <Form.Group>
                                 <Form.Control
                                     plaintext
-                                    as="textarea"
+                                    type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     size="sm"
                                     placeholder="Ratings Average"
                                     name="ratingsAverage"
@@ -220,7 +220,7 @@ const ProductAddPage = () => {
                             <Form.Group>
                                 <Form.Control
                                     plaintext
-                                    as="textarea"
+                                    type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     size="sm"
                                     placeholder="In Stock"
                                     name="inStock"
@@ -233,7 +233,7 @@ const ProductAddPage = () => {
                             <Form.Group>
                                 <Form.Control
                                     plaintext
-                                    as="textarea"
+                                    type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     size="sm"
                                     placeholder="Availability"
                                     name="availability"
@@ -246,7 +246,7 @@ const ProductAddPage = () => {
                             <Form.Group>
                                 <Form.Control
                                     plaintext
-                                    as="textarea"
+                                    type="number"
                                     size="sm"
                                     placeholder="Price"
                                     name="price"
