@@ -63,7 +63,7 @@ top:0;
 
 
 .item-bot{
-    
+    padding-top: 20px;
     height: 10vh;
     width: 20vw;
     display: flex;

@@ -112,7 +112,10 @@ const HomePage = () => {
       </div>
       <div>
         {loading ? (
-          <ClipLoader color="#f86c6b" size={150} loading={loading} />
+          <div cliploader-wrap>
+
+            <ClipLoader color="#f86c6b" size={150} loading={loading} />
+          </div>
         ) : (
 
             <div className="tien-home-bg">
