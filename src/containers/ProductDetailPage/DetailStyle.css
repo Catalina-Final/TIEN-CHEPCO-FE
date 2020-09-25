@@ -53,12 +53,12 @@ top:0;
 }
 .item-wrap img{
     width: 23vw;
-    opacity: 0.8;
-    animation: fadeIn ease 15s infinite alternate;
-    -webkit-animation: fadeIn ease 15s infinite alternate;
-    -moz-animation: fadeIn ease 15s infinite alternate;
-    -o-animation: fadeIn ease 15s infinite alternate;
-    -ms-animation: fadeIn ease 15s infinite alternate;
+    opacity: 0.5;
+    animation: fadeIn ease 20s infinite alternate;
+    -webkit-animation: fadeIn ease 20s infinite alternate;
+    -moz-animation: fadeIn ease 20s infinite alternate;
+    -o-animation: fadeIn ease 20s infinite alternate;
+    -ms-animation: fadeIn ease 20s infinite alternate;
 }
 
 
@@ -147,4 +147,162 @@ top:0;
     100% {
       opacity:1;
   }
+}
+
+@media screen and (max-width: 400px){
+    .detail-page-style{
+        width: 100vw;
+        height: 100vh;
+        
+        display: flex;
+        align-items: flex-end;
+        
+    }
+    .detail-background {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 0;
+        top:0;
+        }
+    .detail-content{
+            z-index:10;
+            width: 100vw;
+            height: 85vh;
+            
+            display: flex;
+            flex-direction: column;
+            
+        
+        }
+        .detail-side{
+            width: 100vw;
+            height: 100vh;
+            
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        
+        }
+        .round-item{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10vh;
+            border-radius: 50%;
+            background-color: #C2D1CE;
+
+        }
+        .item-wrap{
+            width: 80vw;
+            height: 65vh;
+            
+            right: 0;
+            z-index: 15;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            
+        }
+        .item-wrap img{
+            width: 70%;
+            height: 70%;
+            opacity: 0.5;
+            animation: fadeIn ease 20s infinite alternate;
+            -webkit-animation: fadeIn ease 20s infinite alternate;
+            -moz-animation: fadeIn ease 20s infinite alternate;
+            -o-animation: fadeIn ease 20s infinite alternate;
+            -ms-animation: fadeIn ease 20s infinite alternate;
+        }
+        
+        
+        .item-bot{
+            
+            height: 10vh;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+        .detail-body{
+            width: 100vw;
+            height: 15vh;
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .detail-body-top{
+            border: 1px solid red;
+            height: 20vh;
+            width: 70vw;
+            display: flex;
+            align-items: center;
+            
+        
+        }
+        .detail-body-bot{
+           
+            height: 15vh;
+            width: 30vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-outline-info {
+            border-radius: 50% !important;
+            width: 5vw !important;
+        }
+        
+        
+        @keyframes fadeIn {
+            0% {
+              opacity:0;
+            }
+            100% {
+              opacity:1;
+            }
+          }
+          
+          @-moz-keyframes fadeIn {
+            0% {
+              opacity:0;
+            }
+            100% {
+              opacity:1;
+            }
+          }
+          
+          @-webkit-keyframes fadeIn {
+            0% {
+              opacity:0;
+            }
+            100% {
+              opacity:1;
+            }
+          }
+          
+          @-o-keyframes fadeIn {
+            0% {
+              opacity:0;
+            }
+            100% {
+              opacity:1;
+            }
+          }
+          
+          @-ms-keyframes fadeIn {
+            0% {
+              opacity:0;
+            }
+            100% {
+              opacity:1;
+          }
+        }
+    
 }
