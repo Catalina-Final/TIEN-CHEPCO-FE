@@ -197,6 +197,9 @@ const ProductEditPage = () => {
                             <Form.Group>
                                 <Form.Control
                                     type="number"
+                                    id="replyNumber"
+                                    min="0"
+                                    data-bind="value:replyNumber"
                                     plaintext
                                     rows="10"
                                     placeholder="Availability"

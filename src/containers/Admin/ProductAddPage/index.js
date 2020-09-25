@@ -247,6 +247,9 @@ const ProductAddPage = () => {
                                 <Form.Control
                                     plaintext
                                     type="number"
+                                    id="replyNumber"
+                                    min="0"
+
                                     size="sm"
                                     placeholder="Price"
                                     name="price"

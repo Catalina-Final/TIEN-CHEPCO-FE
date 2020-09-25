@@ -87,7 +87,9 @@ const ProductListPage = () => {
         <div className="tien-admin-product-list">
           {loading ? (
             <>
-              <ClipLoader color="#f86c6b" size={150} loading={loading} />
+              <div className="cliploader-wrap">
+                <ClipLoader color="#f86c6b" size={150} loading={loading} />
+              </div>
             </>
           ) : (
               <>
