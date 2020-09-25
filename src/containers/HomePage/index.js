@@ -34,6 +34,7 @@ const HomePage = () => {
   const handleBuyNow = (productId) => {
     dispatch(productActions.addProductToCart(productId))
   }
+
   const colors = ["green", "light-green", "yellow"]
 
   useEffect(() => {
