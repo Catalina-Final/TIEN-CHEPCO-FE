@@ -15,7 +15,7 @@
     margin-right:5vw;
 }
 .add-wrap{
-    border: 1px solid red;
+    
     height: 100vh;
     width: 50vw;
     display: flex;
@@ -23,14 +23,14 @@
 
 }
 .tien-button-wrap{
-    border: 1px solid red;
+    
     margin-right: 50px;
     z-index: 3;
     margin-top: 25vh;
 }
 .tien-button{
  display: flex;
- border: 1px solid red;
+ 
  width: 70px;
 
 }
@@ -43,7 +43,7 @@
 
 .tien-product-list-img svg{
 position: absolute;
-border: 1px solid red;
+
 left: 0;
 width: 50vw;
 bottom:0;

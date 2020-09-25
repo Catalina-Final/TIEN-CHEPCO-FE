@@ -24,7 +24,7 @@ a{
 @media screen and (max-width: 900px){
     .tien-nav-bar{
         display: flex;
-        border: 1px solid red;
+        
         flex-direction: row;
         position: absolute;
         z-index: 2;

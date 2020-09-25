@@ -34,7 +34,7 @@
 }
 
 .tien-product-info{
-    /* border: 1px solid red; */
+    /* */
     display: flex;
     justify-content: space-between ;
     flex-direction: row;
@@ -57,7 +57,7 @@
     flex-direction: column;
     justify-content: center;
     padding-top:20px;
-    /* border: 1px solid red; */
+    /* */
     
 }
 
@@ -95,13 +95,13 @@ border: none;
     
     }
     .tien-product-pic{
-        border: 1px solid red;
+
         width: 35vw;
        
     }
 
 .tien-product-info{
-    border: 1px solid red;
+   
     display: flex;
     justify-content: space-between ;
     flex-direction: row;
