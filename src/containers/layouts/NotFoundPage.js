@@ -1,16 +1,13 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
+import './NotFound.css'
 const NotFoundPage = () => {
   return (
-    <Container>
-      <Row>
-        <Col md={{ span: 6, offset: 3 }}>
-          <h1>404</h1>
-          <p>The page you are looking for does not exist.</p>
-        </Col>
-      </Row>
-    </Container>
+    <div className="not-found-page">
+      <div className="not-found-img">
+
+      </div>
+    </div>
   );
 };
 export default NotFoundPage;

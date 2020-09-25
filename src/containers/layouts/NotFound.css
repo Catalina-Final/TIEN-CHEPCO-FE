@@ -1,0 +1,22 @@
+.not-found-page{
+    
+    
+    border: 1px solid red;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.not-found-img{
+    
+    background: url('../../images/notfound.png');
+    width: 60vw;
+    height: 60vh;
+    background-size: cover;
+    
+}
+.not-found-img:before {
+    content:"Page Not Found"
+}
