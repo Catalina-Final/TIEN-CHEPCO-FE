@@ -12,7 +12,7 @@ const OrderAdmin = (order, key) => {
         return acc + curr.product.price * curr.quantity
     }, 0)
     const time = order.order.products[0].createdAt
-    console.log(totalPrice)
+
     const state = useSelector((state) => state)
     const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ const OrderAdmin = (order, key) => {
     const handleChange = () => {
         dispatch(orderActions.updateOrderStatus(order.order._id))
     }
-    console.log(order)
+
     return (
         <div className="tien-order-style">
             <div classname="admin-order-title-wrap">

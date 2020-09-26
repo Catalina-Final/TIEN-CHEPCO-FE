@@ -40,7 +40,7 @@ const ProductEditPage = () => {
 
     useEffect(() => {
         if (productId) {
-            console.log(selectedProduct)
+
             if (!selectedProduct || selectedProduct._id != productId) {
                 dispatch(productActions.getSingleProduct(productId));
             } else {
@@ -73,7 +73,7 @@ const ProductEditPage = () => {
 
     const handleChange = (e) => {
         if (e.target.name === "images") {
-            console.log(e.target.files);
+
             setFormData({ ...formData, images: e.target.files });
         } else {
             setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -107,12 +107,6 @@ const ProductEditPage = () => {
         if (e.target.name) {
             setFormData({ ...formData, category: e.target.name })
         }
-    }
-    console.log(auth.user._id)
-    console.log(selectedProduct)
-
-    if (selectedProduct && selectedProduct.createdBy !== auth.user._id) {
-        return <div> anhhhhhh </div>
     }
 
     return (

@@ -16,13 +16,13 @@ const Routes = (props) => {
       <PrivateRoute
         path="/admin"
         component={AdminLayout}
-        isAuthenticated={auth.user.roles === "admin" ? true : false}
+        isAuthenticated={auth.user.roles === "admin"}
         loading={loading} />
 
       <PrivateRoute
         path="/user"
         component={UserLayout}
-        isAuthenticated={auth.user.roles === "user" ? true : false}
+        isAuthenticated={auth.user.roles === "user"}
         loading={loading} />
 
       <Route path="/" component={PublicLayout} />

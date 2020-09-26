@@ -26,6 +26,7 @@ const productReducer = (state = initialState, action) => {
             return { ...state, loading: true, isOrderFinished: false };
 
         case types.PRODUCT_REQUEST_SUCCESS:
+        case types.PRODUCT_ADMIN_REQUEST_SUCCESS:
             return {
                 ...state,
                 products: payload.totalProducts,

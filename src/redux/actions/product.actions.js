@@ -17,12 +17,27 @@ const productsRequest = () => async (dispatch) => {
     dispatch({ type: types.PRODUCT_REQUEST_FAILURE, payload: error });
   }
 };
+const productsAdminRequest = () => async (dispatch) => {
+  dispatch({ type: types.PRODUCT_ADMIN_REQUEST, payload: null });
+  try {
+
+    const res = await api.get(
+      `/admin/products`
+    )
+    dispatch({
+      type: types.PRODUCT_ADMIN_REQUEST_SUCCESS,
+      payload: res.data.data,
+    });
+  } catch (error) {
+    dispatch({ type: types.PRODUCT_ADMIN_REQUEST_FAILURE, payload: error });
+  }
+};
 
 const getSingleProduct = (productId) => async (dispatch) => {
   dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST, payload: null });
   try {
     const res = await api.get(`/products/${productId}`);
-    console.log(res.data)
+
     dispatch({
       type: types.GET_SINGLE_PRODUCT_REQUEST_SUCCESS,
       payload: res.data.data,
@@ -34,6 +49,7 @@ const getSingleProduct = (productId) => async (dispatch) => {
 
 
 const createNewProduct = (
+
   name,
   description,
   category,
@@ -44,21 +60,8 @@ const createNewProduct = (
   images) => async (dispatch) => {
     dispatch({ type: types.CREATE_PRODUCT_REQUEST, payload: null });
     try {
-      // formData.append("name", name);
-      // formData.append("description", description); 
-      // formData.append("category", category); 
-      // formData.append("ratingsAverage", ratingsAverage); 
-      // formData.append("inStock", inStock); 
-      // formData.append("availability", availability); 
-      // formData.append("price", price); 
-      // if (images && images.length) {
-      //     for (let index = 0; index < images.length; index++) {
-      //         formData.append("images", images[index]);
-      //     }
-      // }
 
-      // Upload images using cloudinary already
-      const res = await api.post("/products", {
+      const res = await api.post("/admin/products/add", {
         name,
         description,
         category,
@@ -92,10 +95,8 @@ const updateProduct = (
 ) => async (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST, payload: null });
   try {
-    // let formData = new FormData();
-    // formData.set("title", title); ?
-    // formData.set("content", content); ?
-    const res = await api.put(`/products/${productId}`, {
+
+    const res = await api.put(`/admin/products/${productId}`, {
       name,
       description,
       category,
@@ -119,8 +120,8 @@ const updateProduct = (
 const deleteProduct = (productId) => async (dispatch) => {
   dispatch({ type: types.DELETE_PRODUCT_REQUEST, payload: null });
   try {
-    const res = await api.delete(`/products/${productId}`);
-    console.log(res);
+    const res = await api.delete(`/admin/products/${productId}`);
+
     dispatch({
       type: types.DELETE_PRODUCT_SUCCESS,
       payload: res.data,
@@ -165,6 +166,7 @@ const updateProductFromCart = (productId, quantity) => async (dispatch) => {
 
 export const productActions = {
   productsRequest,
+  productsAdminRequest,
   getSingleProduct,
   createNewProduct,
   updateProduct,

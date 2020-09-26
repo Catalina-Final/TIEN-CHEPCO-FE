@@ -45,7 +45,7 @@ const ordersUserRequest = () => async (dispatch) => {
         const res = await api.get(
             `/orders/user`
         );
-        console.log(res)
+
         dispatch({
             type: types.ORDERS_USER_REQUEST_SUCCESS,
             payload: res.data.data,
@@ -62,7 +62,7 @@ const updateOrderStatus = (orderId) => async (dispatch) => {
         const res = await api.put(
             `/orders/${orderId}`
         );
-        console.log(res)
+
         dispatch({
             type: types.UPDATE_ORDER_STATUS_SUCCESS,
             payload: orderId,

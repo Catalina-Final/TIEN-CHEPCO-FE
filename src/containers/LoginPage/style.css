@@ -1,20 +1,33 @@
 .tien-login-page-style{
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-end;
+   width: 100vw;
+   height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid red;
 }
 .tien-login-form{
-    margin-bottom: 20vh;
-    width: 30vw;
-    margin-left: 13vw;
+    border: 1px solid red;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.698);
+   height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5vh;
+    
+}
+.tien-login-form .form-control{
+    width: 40vw;
 }
 .kep-login-facebook.metro {
-    border-radius: 0;
-    display: none;
+    /* border-radius: 0; */
+   
 }
 .fb-bnt-tien{
-    display: none !important;
+    /* display: none !important; */
 }
 .tien-arrange-icon{
     display: flex;

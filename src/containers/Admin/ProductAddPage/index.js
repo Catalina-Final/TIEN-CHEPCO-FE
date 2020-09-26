@@ -14,7 +14,7 @@ import SubmitIcon from '../../../images/add-button.svg'
 import RemoveIcon from '../../../images/remove-btn.svg'
 import AddEditBg from '../../../images/addedit-bg.svg'
 const ProductAddPage = () => {
-    // console.log("tien check state", useSelector((state) => state))
+
     const [formData, setFormData] = useState({
         name: "",
         description: "",
@@ -62,7 +62,7 @@ const ProductAddPage = () => {
 
     const handleChange = (e) => {
         if (e.target.name === "images") {
-            console.log(e.target.files);
+
             setFormData({ ...formData, images: e.target.files });
         } else {
             setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -107,7 +107,6 @@ const ProductAddPage = () => {
         }
     }, [redirectTo]);
 
-    console.log(redirectTo)
     const uploadWidget = () => {
         window.cloudinary.openUploadWidget(
             {
@@ -121,7 +120,7 @@ const ProductAddPage = () => {
             function (error, result) {
                 if (result && result.data && result.data.info && result.data.info.files) {
                     let a = result.data.info.files
-                    console.log(a)
+
                     setFormData({
                         ...formData,
                         images: a.map((b) => b.uploadInfo.secure_url),
@@ -313,17 +312,7 @@ const ProductAddPage = () => {
                                 </ButtonGroup>
                             </div>
 
-                            {/* {addOrEdit === "Edit" && (
-                                <ButtonGroup className="d-flex">
-                                    <Button
-                                        variant="danger"
-                                        onClick={handleDelete}
-                                        disabled={loading}
-                                    >
-                                        Delete Product
-                </Button>
-                                </ButtonGroup>
-                            )} */}
+
                         </Form>
                     </div>
 

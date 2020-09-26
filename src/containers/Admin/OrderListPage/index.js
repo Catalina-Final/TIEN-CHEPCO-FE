@@ -14,9 +14,6 @@ const OrderListPage = () => {
         dispatch(orderActions.ordersAdminRequest());
     }, [dispatch]);
 
-
-    // if (!totalOrders || totalOrders.length === 0) return <></>
-    console.log("admin check orders", totalOrders)
     if (!totalOrders || !(totalOrders.length >= 0)) return <>Loading </>
     return (
         <div className="tien-order-list-style">

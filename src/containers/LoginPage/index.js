@@ -40,6 +40,7 @@ const LoginPage = () => {
   };
 
   const loginWithFacebook = (response) => {
+
     dispatch(authActions.loginFacebookRequest(response.accessToken));
   };
 
@@ -52,9 +53,9 @@ const LoginPage = () => {
   return (
     <div className="tien-login-page-style">
       <div >
-        <img src={LoginBg} alt="login bg" style={{ height: "100vh" }} />
+        <img src={LoginBg} alt="login bg" style={{ height: "100vh", position: "fixed", right: "0", top: "0" }} />
       </div>
-      <Col md={{ span: 6, offset: 3 }}>
+      <Col md={{ span: 6, offset: 3 }} style={{ position: "relative", zIndex: "3" }}>
         <Form onSubmit={handleSubmit} className="tien-login-form">
 
           <Form.Group>
@@ -98,28 +99,25 @@ const LoginPage = () => {
 
               )}
 
-            <label style={{ cursor: "pointer" }}>
-              <img src={FbIcon} alt="fb icon" style={{ width: "5vw" }} />
-              <FacebookLogin
-                appId={FB_APP_ID}
-                style={{ display: "none" }}
-                fields="name,email,picture"
-                callback={loginWithFacebook}
-              // onFailure={(err) => {
-              //   console.log("FB LOGIN ERROR:", err);
-              // }}
-              // style={{ display: "none" }}
-              />
-            </label>
+
+            {/* <img src={FbIcon} alt="fb icon" style={{ width: "5vw" }} /> */}
+            <FacebookLogin
+              appId={FB_APP_ID}
+
+              fields="name,email,picture"
+              callback={loginWithFacebook}
+              onFailure={(err) => {
+                console.log("FB LOGIN ERROR:", err);
+              }}
+
+            />
+
             <label style={{ cursor: "pointer" }}>
               <img src={GgIcon} alt="google icon" style={{ width: "5vw" }} />
               <GoogleLogin
                 className="fb-bnt-tien"
                 clientId={GOOGLE_CLIENT_ID}
                 onSuccess={loginWithGoogle}
-                // onFailure={(err) => {
-                //   console.log("GOOGLE LOGIN ERROR:", err);
-                // }}
                 cookiePolicy="single_host_origin"
               />
             </label>

@@ -18,11 +18,9 @@ const ProductListPage = () => {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(productActions.productsRequest());
+    dispatch(productActions.productsAdminRequest());
   }, [dispatch]);
-  const handleClickOnProduct = (id) => {
-    history.push(`/products/${id}`);
-  };
+
 
   return (
     <div>
@@ -101,7 +99,7 @@ const ProductListPage = () => {
                         <ProductAdminView
                           product={product}
                           key={product._id}
-                          handleClick={handleClickOnProduct}
+
                         />
                       ))}
                     </div>
