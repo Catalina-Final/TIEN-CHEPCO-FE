@@ -36,23 +36,26 @@ const ProductEditPage = () => {
     const productId = params.id;
 
     useEffect(() => {
-        if (productId) {
+        if (!selectedProduct) {
+            dispatch(productActions.getSingleProduct(productId));
+        }
 
-            if (!selectedProduct || selectedProduct._id != productId) {
-                dispatch(productActions.getSingleProduct(productId));
-            } else {
-                setFormData({
-                    ...formData,
-                    name: selectedProduct.name,
-                    description: selectedProduct.description,
-                    category: selectedProduct.type.type,
-                    ratingsAverage: selectedProduct.ratingsAverage,
-                    inStock: selectedProduct.inStock,
-                    availability: selectedProduct.availability,
-                    price: selectedProduct.price,
-                    images: selectedProduct.images,
-                });
-            }
+        if (selectedProduct && productId !== selectedProduct._id) {
+            dispatch(productActions.getSingleProduct(productId));
+        }
+
+        if (selectedProduct) {
+            setFormData({
+                ...formData,
+                name: selectedProduct.name,
+                description: selectedProduct.description,
+                category: selectedProduct.type.type,
+                ratingsAverage: selectedProduct.ratingsAverage,
+                inStock: selectedProduct.inStock,
+                availability: selectedProduct.availability,
+                price: selectedProduct.price,
+                images: selectedProduct.images,
+            });
         }
     }, [productId, selectedProduct]);
 
@@ -127,7 +130,8 @@ const ProductEditPage = () => {
             }
         );
     };
-    if (!formData.category) return null;
+
+    if (!selectedProduct) return null;
 
     return (
         <div className="tien-add-product-style">
