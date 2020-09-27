@@ -1,35 +1,36 @@
 .tien-login-page-style{
     display: flex;
-   width: 100vw;
-   height: 100vh;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    width: 100vw;
+    height: 100vh;
     border: 1px solid red;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .tien-login-form{
-    border: 1px solid red;
+    border: 1px solid white;
     border-radius: 40px;
-    background-color: rgba(255, 255, 255, 0.698);
-   height: 50vh;
-    width: 50vw;
+    background-color: rgba(255, 255, 255, 0.678);
+    padding: 20px;
+    width: 60vw;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding-top: 5vh;
+   
+    
     
 }
-.tien-login-form .form-control{
-    width: 40vw;
+.fb-bnt-tien{
+    display: none !important;
 }
 .kep-login-facebook.metro {
-    /* border-radius: 0; */
-   
-}
-.fb-bnt-tien{
-    /* display: none !important; */
+    border-radius: 0;
+    display: none;
 }
 .tien-arrange-icon{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    padding: 0;
+    
 }

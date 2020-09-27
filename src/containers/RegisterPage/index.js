@@ -43,27 +43,13 @@ const RegisterPage = () => {
   if (isAuthenticated) return <Redirect to="/" />;
 
   return (
-    <Container className="tien-register-style" style={{ height: "100vh" }}>
-      <div>
-        <img src={BgReg} alt="reg background" style={{ width: "35vw" }} />
-        {/* <img src={BgRegIllus} alt="reg background" style={{ width: "50vw" }} /> */}
-      </div>
-      <div >
-        <Form onSubmit={handleSubmit}>
-          <Form.Group>
-            <div className="text-center">
-              {/* {formData.avatarUrl && (
-                <div className="mb-3">
-                  <img
-                    src={formData.avatarUrl}
-                    className="avatar-lg"
-                    alt="avatar"
-                  />
-                </div>
-              )} */}
+    <div className="tien-register-style" >
+      <div className="register-bg">
+        <img src={BgReg} alt="reg background" />
 
-            </div>
-          </Form.Group>
+      </div>
+      <div className="tien-resgister-form">
+        <Form onSubmit={handleSubmit} className="tien-resgister-form-detail">
           <Form.Group>
             <Form.Control
               type="text"
@@ -127,20 +113,20 @@ const RegisterPage = () => {
                 Loading...
             </Button>
           ) : (
-              <Row>
+              <div className="tien-reg-row">
                 <p>
                   Already have an account? <Link to="/login">Sign In</Link>
                 </p>
-                <label className="tien-bnt-reg">
+                <label className="tien-bnt-reg" style={{ cursor: "pointer" }}>
                   <img src={RegIcon} alt="reg ison" style={{ height: "20vh" }} />
                   <input type="submit" style={{ display: "none" }}></input>
                 </label>
-              </Row>
+              </div>
             )}
 
         </Form>
       </div>
-    </Container>
+    </div>
   )
 }
 

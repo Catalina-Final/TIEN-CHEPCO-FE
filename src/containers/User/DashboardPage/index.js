@@ -8,7 +8,6 @@ import './UserDashboardStyle.css'
 const DashboardPage = () => {
     const dispatch = useDispatch();
     const totalOrders = useSelector((state) => state.order.orders)
-    console.log("dsadsadasdad", totalOrders)
     useEffect(() => {
         dispatch(orderActions.ordersUserRequest());
     }, [dispatch]);

@@ -7,8 +7,7 @@ import { Card, Button } from "react-bootstrap";
 import Moment from "react-moment";
 import productAdminStyle from './productAdmin.css'
 const ProductAdminView = ({ product, handleClick }) => {
-    console.log("tttttttt", product)
-    // if (!product) return <p>loading</p>
+
     return (
 
         <div >
@@ -23,7 +22,7 @@ const ProductAdminView = ({ product, handleClick }) => {
                 </div>
                 <hr />
                 <p>
-                    Category:  {product.type.type}
+                    Category:  {product.type ? product.type.type : ""}
                 </p>
                 <hr />
                 <p>

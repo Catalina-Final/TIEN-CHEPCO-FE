@@ -18,9 +18,6 @@ const UserShipping = () => {
     const cart = useSelector((state) => state.product.cart);
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const history = useHistory();
-    console.log("cart", cart)
-
-
     const [formData, setFormData] = useState({
         fullName: "",
         phone: "",

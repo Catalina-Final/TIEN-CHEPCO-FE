@@ -26,7 +26,7 @@ const PublicNavbar = () => {
             <Navbar className="tien-nav-bar">
                 <Link to="/">
                     <Navbar.Brand >
-                        <img src={ChepLogo} alt="chepLogo" style={{ height: "10vh", marginLeft: "15px" }} />
+                        <img src={ChepLogo} alt="chepLogo" className="chepLogo" />
                     </Navbar.Brand>
                 </Link>
                 <NavbarLinks user={auth.user} />

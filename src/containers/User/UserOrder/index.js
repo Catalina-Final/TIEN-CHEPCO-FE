@@ -8,9 +8,6 @@ import './CartStyle.css'
 const UserOrder = () => {
     const loading = useSelector((state) => state.auth.loading);
     const cart = useSelector((state) => state.product.cart);
-    // const productNum = cart.length > 0 ? cart.reduce((sum, product) => (sum + product.qty), 0) : 0;
-    console.log("check cart", cart)
-    // console.log("product num", productNum)q
     return (
         <div className="tien-add-cart-style">
             <div className="add-cart-body">

@@ -5,7 +5,7 @@ import { useHistory, Link } from "react-router-dom";
 
 import ProductAdminView from "../../../components/ProductAdminView"
 
-import { Button, Container } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 import ClipLoader from "react-spinners/ClipLoader";
 import './style.css'
 
@@ -15,7 +15,6 @@ const ProductListPage = () => {
   const loading = useSelector((state) => state.product.loading);
   const products = useSelector((state) => state.product.products);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const history = useHistory();
 
   useEffect(() => {
     dispatch(productActions.productsAdminRequest());

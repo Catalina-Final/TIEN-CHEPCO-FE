@@ -20,7 +20,7 @@ const ProductEditPage = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();
-    const auth = useSelector(state => state.auth)
+    const addOrEdit = params.id ? "Edit" : "Add";
     const selectedProduct = useSelector((state) => state.product.selectedProduct);
     const [formData, setFormData] = useState({
         name: "",
@@ -30,13 +30,10 @@ const ProductEditPage = () => {
         inStock: "",
         availability: "",
         price: "",
-        // images: null,
+        images: null,
     });
     const redirectTo = useSelector((state) => state.product.redirectTo);
     const productId = params.id;
-    // useEffect(() => {
-    //     setFormData(selectedProduct)
-    // }, [selectedProduct]);
 
     useEffect(() => {
         if (productId) {
@@ -48,12 +45,12 @@ const ProductEditPage = () => {
                     ...formData,
                     name: selectedProduct.name,
                     description: selectedProduct.description,
-                    category: selectedProduct.category,
+                    category: selectedProduct.type.type,
                     ratingsAverage: selectedProduct.ratingsAverage,
                     inStock: selectedProduct.inStock,
                     availability: selectedProduct.availability,
                     price: selectedProduct.price,
-                    // images: selectedProduct.images,
+                    images: selectedProduct.images,
                 });
             }
         }
@@ -90,10 +87,10 @@ const ProductEditPage = () => {
             inStock,
             availability,
             price,
-            // images,
+            images,
         } = formData;
 
-        dispatch(productActions.updateProduct(selectedProduct._id, name, description, category, ratingsAverage, inStock, availability, price)); //,images
+        dispatch(productActions.updateProduct(selectedProduct._id, name, description, category, ratingsAverage, inStock, availability, price, images)); //,images
     };
     const handleCancel = () => {
         history.goBack();
@@ -104,10 +101,33 @@ const ProductEditPage = () => {
     };
 
     const handleChangeCat = (e) => {
-        if (e.target.name) {
-            setFormData({ ...formData, category: e.target.name })
+        if (e.target.value) {
+            setFormData({ ...formData, category: e.target.value })
         }
     }
+    const uploadWidget = () => {
+        window.cloudinary.openUploadWidget(
+            {
+                cloud_name: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
+                upload_preset: process.env.REACT_APP_CLOUDINARY_PRESET,
+                tags: ["chepco", "productImages"],
+
+            },
+
+
+            function (error, result) {
+                if (result && result.data && result.data.info && result.data.info.files) {
+                    let a = result.data.info.files
+
+                    setFormData({
+                        ...formData,
+                        images: a.map((b) => b.uploadInfo.secure_url),
+                    });
+                }
+            }
+        );
+    };
+    if (!formData.category) return null;
 
     return (
         <div className="tien-add-product-style">
@@ -151,15 +171,17 @@ const ProductEditPage = () => {
                                         name="milk"
                                         label="milk"
                                         onChange={handleChangeCat}
-                                        value={formData.category}
-                                        id="5f606eec29c5b42a53c38672"
+                                        value="milk"
+                                        checked={formData.category === 'milk'}
+                                        id="cat-milk"
                                     />
                                     <Form.Check
                                         name="tea"
                                         label="tea"
                                         onChange={handleChangeCat}
-                                        value={formData.category}
-                                        id="5f6073583b66ed2d25aebf45"
+                                        value="tea"
+                                        checked={formData.category === 'tea'}
+                                        id="cat-tea"
                                     />
                                 </div>
                                 <hr />
@@ -215,22 +237,26 @@ const ProductEditPage = () => {
                                 />
                                 <hr />
                             </Form.Group>
+                            <Form.Group>
+                                {formData?.images?.map((image) => (
+                                    < img
+                                        src={image}
+                                        key={image}
+                                        width="90px"
+                                        height="60px"
+                                        alt="Product image"
+                                    ></img>
+                                ))}
+                                <div className="add-img-wrap">
+                                    <label className="tien-add-img">
+                                        <img src={AddImage} alt="add img icon" style={{ width: "5vw" }} />
+                                        <Button variant="info" onClick={uploadWidget} style={{ display: "none" }}>
+                                            {addOrEdit} Images
+                                 </Button>
+                                    </label>
+                                </div>
 
-
-                            {/* <Form.Group>
-                    {formData?.images?.map((image) => (
-                        <img
-                            src={image}
-                            key={image}
-                            width="90px"
-                            height="60px"
-                            alt="blog images"
-                        ></img>
-                    ))}
-                    <Button variant="info" onClick={uploadWidget}>
-                        {addOrEdit} Images
-                     </Button>
-                </Form.Group> */}
+                            </Form.Group>
                             <div>
                                 <ButtonGroup className="tien-btn-wrap">
                                     {loading ? (

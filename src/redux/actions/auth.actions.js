@@ -85,7 +85,7 @@ const getCurrentUser = (accessToken) => async (dispatch) => {
     // dispatch({ type: "UPDATE_CART_ON_REFRESH", payload: res.data.data.cart.products })
     // return dispatch({ type: "DONE" })
   } catch (error) {
-    console.log(error);
+
     dispatch({ type: types.GET_CURRENT_USER_FAILURE, payload: error });
   }
 };

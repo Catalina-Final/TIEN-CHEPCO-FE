@@ -14,7 +14,6 @@ const NavbarLinks = ({ user }) => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const loading = useSelector((state) => state.auth.loading);
     const cart = useSelector((state) => state.product.cart);
-    console.log("==========", cart)
     const [productNum, setProductNum] = useState(0)
     const dispatch = useDispatch();
     const handleLogout = () => {

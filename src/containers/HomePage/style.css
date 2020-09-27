@@ -10,22 +10,15 @@
 }
 
 .tien-products-background{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    
 }
 .tien-products-background img{
     
-    height: 100vh; 
+    
 }
 
 .tien-display-layer{
-    display: flex;
-    align-items: flex-end;
-    height: 100vh;
-    /* ; */
-    position: center;
-    z-index: 5;
+    
 }
 .tien-products-list{
     /* ; */
@@ -33,9 +26,9 @@
     align-items: flex-end;
     justify-content: space-between;
     width: 71vw;
-    height: 65vh;
-    padding-bottom: 5vh;
-    padding-right: 5vw;
+    
+    
+    
     
    
    position: absolute;
@@ -144,85 +137,3 @@ transform: rotateX(0deg)
     }
 }
 
-
-/* FOR PHONE */
-@media screen and (max-width: 400px){
-    .tien-home-bg{
-        background-image: linear-gradient(to right, #e8dbd2, #f0e3e1, #f5ecee, #f9f6f8, #ffffff);
-        display: flex;
-
-    }
-    .tien-products-background img{
-        display: none
-    }
-    
-    .tien-products-list{
-       width: 100vw;
-       display: flex;
-       justify-content: flex-start;
-       flex-direction: column;
-       padding: 3vh;
-       /* ; */
-    }
-    
-    
-    .tien-products-list-layer{
-       display: none;
-    }
-    .tien-hompage-icon{
-        width: 100vw;
-    }
-    .tien-hompage-icon h3{
-        color: black;
-        text-align: center;
-        /* ; */
-        
-        margin-top: 8vh;
-    }
-    .tien-hompage-icon img{
-        display: none;
-        
-    }
-    .tien-yoga-img {
-        width: 50vw;
-        height: 100vh;
-        display: flex;
-        align-items: flex-end;
-        padding-bottom: 3vh;
-    }
-    .tien-yoga-img svg{
-       width: 50vw;
-       /* ; */
-
-        
-    } 
-    
-    #circle {
-    animation: move 1s ease-in-out infinite alternate;
-    transform-origin: bottom;
-    
-    }
-    #leave-ground{
-        animation: leaveMove 1s ease-in-out infinite alternate;
-        transform-origin: bottom;
-    }
-    
-    @keyframes move{
-        from{
-    transform: rotateX(0deg)
-        }to{
-        transform: rotateX(30deg)
-        }
-    }
-    
-    
-    @keyframes leaveMove{
-        from{
-    transform: rotateX(0deg)
-        }to{
-        transform: rotateX(50deg)
-        }
-    } 
-
-
-}

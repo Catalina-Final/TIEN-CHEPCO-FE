@@ -8,13 +8,13 @@ import HanhNhan from "./images/hanhnhan.png"
 
 
 const Product = ({ product, handleClick, handleBuyNow, color }) => {
-    console.log("product pic", product)
+
     return (
         <div className="tien-product-style">
 
             <div >
                 <img
-                    // variant="top"
+
                     src={
                         product.images?.length
                             ? product.images[0]

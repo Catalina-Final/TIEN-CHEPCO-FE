@@ -21,8 +21,6 @@ const ProductDetailPage = () => {
         dispatch(productActions.addProductToCart(productId))
     }
 
-    console.log("product", product)
-
     if (!product) return <>Loading </>
     return (
         <div className="detail-page-style">

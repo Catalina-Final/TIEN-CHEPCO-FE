@@ -90,10 +90,7 @@ const ProductAddPage = () => {
     const handleCancel = () => {
         history.goBack();
     };
-    const handleDelete = () => {
-        // TODO : popup confirmation modal
-        dispatch(productActions.deleteProduct(selectedProduct._id));
-    };
+
 
     useEffect(() => {
         if (redirectTo) {

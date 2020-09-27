@@ -1,30 +1,44 @@
 .tien-register-style{
     display: flex;
+    flex-wrap: wrap;
+    justify-self: flex-end;
    
-    justify-content: space-around;
-    align-items: flex-end;
+    
 }
-.tien-auth-form {
-    width: 30vw !important;
-    position: absolute;
-    z-index: 0;
+.register-bg img{
+height: 80vh;
+position: absolute;
+z-index:0;
+bottom: 0;
 }
 
-.row{
-    width: 40vw;
-    margin-bottom: 10vh;
-    position: relative;
-    z-index: 2;
+.tien-resgister-form{
+   align-items: center;
+   position: absolute;
+   
+    z-index: 3;
+   width: 100vw;
+   height:100vh;
+   align-items: center;
+    
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.tien-bnt-reg{
-    display: flex;
-    cursor: pointer;
+    justify-content: center;
 
 }
+.tien-resgister-form .tien-resgister-form-detail{
+    width: 60vw;
+    border: 1px solid white;
+    padding: 5vw;
+    background-color: rgba(255, 255, 255, 0.678);
+    border-radius: 40px;
 
+    
+}
 .form-control{
     border-radius: 15px;
+} 
+.tien-reg-row{
+    display: flex;
+    justify-content: flex-end;
+
 }

@@ -62,13 +62,7 @@ const HomePage = () => {
     <div >
       <div className="tien-hompage-icon">
         <h3>Best Sellers</h3>
-        {/* <Link
-          className="menu-item"
-          activeClass="" to="home"
-          spy={true} smooth={true} offset={-100}
-          duration={600} style={{ fontSize: "15px", color: "white" }}
-          onSetActive={(e) => handleSetActive(e)}>Home
-            </Link> */}
+
         <TLink
           activeClass=""
           to="combo"

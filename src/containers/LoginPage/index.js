@@ -14,6 +14,15 @@ import GgIcon from '../../images/google-icon.svg'
 import FbIcon from '../../images/fb-icon.svg'
 
 const LoginPage = () => {
+  // return (
+  //   <FacebookLogin
+  //     appId={FB_APP_ID}
+  //     autoLoad={true}
+  //     fields="name,email"
+  //     callback={(res) => console.log(res)}
+
+  //   />
+  // )
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -39,10 +48,10 @@ const LoginPage = () => {
     dispatch(authActions.loginRequest(email, password));
   };
 
-  const loginWithFacebook = (response) => {
-
+  const responseFacebook = (response) => {
+    console.log("tttttttt", response)
     dispatch(authActions.loginFacebookRequest(response.accessToken));
-  };
+  }
 
   const loginWithGoogle = (response) => {
     dispatch(authActions.loginGoogleRequest(response.accessToken));
@@ -53,9 +62,9 @@ const LoginPage = () => {
   return (
     <div className="tien-login-page-style">
       <div >
-        <img src={LoginBg} alt="login bg" style={{ height: "100vh", position: "fixed", right: "0", top: "0" }} />
+        <img src={LoginBg} alt="login bg" style={{ height: "100vh", position: "absolute", right: "0", top: "0" }} />
       </div>
-      <Col md={{ span: 6, offset: 3 }} style={{ position: "relative", zIndex: "3" }}>
+      <div style={{ position: "relative", zIndex: "3" }}>
         <Form onSubmit={handleSubmit} className="tien-login-form">
 
           <Form.Group>
@@ -99,26 +108,26 @@ const LoginPage = () => {
 
               )}
 
+            <label style={{ cursor: "pointer" }}>
+              <img src={FbIcon} alt="fb icon" style={{ width: "6vw" }} />
+              <FacebookLogin
+                appId={FB_APP_ID}
+                autoLoad={true}
 
-            {/* <img src={FbIcon} alt="fb icon" style={{ width: "5vw" }} /> */}
-            <FacebookLogin
-              appId={FB_APP_ID}
+                scope="name,email,picture"
+                callback={responseFacebook}
 
-              fields="name,email,picture"
-              callback={loginWithFacebook}
-              onFailure={(err) => {
-                console.log("FB LOGIN ERROR:", err);
-              }}
-
-            />
+              />
+            </label>
 
             <label style={{ cursor: "pointer" }}>
-              <img src={GgIcon} alt="google icon" style={{ width: "5vw" }} />
+              <img src={GgIcon} alt="google icon" style={{ width: "6vw" }} />
               <GoogleLogin
                 className="fb-bnt-tien"
                 clientId={GOOGLE_CLIENT_ID}
                 onSuccess={loginWithGoogle}
                 cookiePolicy="single_host_origin"
+
               />
             </label>
 
@@ -128,7 +137,7 @@ const LoginPage = () => {
           </p>
 
         </Form>
-      </Col>
+      </div>
 
     </div>
   )
