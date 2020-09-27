@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from "react-redux";
-import { useHistory, Link } from "react-router-dom";
-import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import CartItems from "../../../components/CartItems"
 import './CartStyle.css'
 

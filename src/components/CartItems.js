@@ -6,7 +6,6 @@ import './CartItemStyle.css'
 
 
 const CartItems = ({ chosenItem }) => {
-
     const [quantity, setQuantity] = React.useState(chosenItem?.quantity)
     const dispatch = useDispatch()
     return (
