@@ -117,9 +117,9 @@ const HomePage = () => {
         </div>
         <div>
           {loading ? (
-            <div cliploader-wrap>
+            <div className="cliploader-wrap">
 
-              <ClipLoader color="#f86c6b" size={150} loading={loading} />
+              <ClipLoader color="#5E9194" size={50} loading={loading} />
             </div>
           ) : (
 

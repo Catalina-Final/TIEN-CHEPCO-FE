@@ -137,12 +137,12 @@ const ProductEditPage = () => {
         <div className="tien-add-product-style">
             <div className="tien-add-body">
                 <div className="tien-add-sidebar">
-                    <div>
-                        <img src={AddEditBg} alt="add edit bg" style={{ width: "30vw" }} />
-                    </div>
+
+                    <img src={AddEditBg} alt="add edit bg" />
+
                 </div>
-                <div classname="tien-add-content">
-                    <div className="tien-form-input">
+                <div className="tien-add-content">
+                    <div className="tien-edit-form-input">
                         <Form onSubmit={handleSubmit}>
 
                             <Form.Group>
@@ -252,14 +252,14 @@ const ProductEditPage = () => {
                                     < img
                                         src={image}
                                         key={image}
-                                        width="90px"
-                                        height="60px"
+                                        width="60px"
+
                                         alt="Product image"
                                     ></img>
                                 ))}
                                 <div className="add-img-wrap">
                                     <label className="tien-add-img">
-                                        <img src={AddImage} alt="add img icon" style={{ width: "5vw" }} />
+                                        <img src={AddImage} alt="add img icon" style={{ width: "70px" }} />
                                         <Button variant="info" onClick={uploadWidget} style={{ display: "none" }}>
                                             {addOrEdit} Images
                                  </Button>
@@ -297,20 +297,23 @@ const ProductEditPage = () => {
                                             Cancel
                                         </Button>
                                     </label>
+                                    <label className="del-btn">
+                                        <h4 style={{ color: "red" }}>Delete</h4>
+                                        <Button
+                                            style={{ display: "none" }}
+                                            variant="outline-danger"
+                                            onClick={handleDelete}
+                                            disabled={loading}
+                                        >
+                                            Delete
+                                        </Button>
+                                    </label>
                                 </ButtonGroup>
+
                             </div>
 
 
-                            <ButtonGroup className="d-flex">
-                                <Button
-                                    style={{ borderRadius: "50px" }}
-                                    variant="danger"
-                                    onClick={handleDelete}
-                                    disabled={loading}
-                                >
-                                    Delete Product
-                </Button>
-                            </ButtonGroup>
+
 
                         </Form>
                     </div>

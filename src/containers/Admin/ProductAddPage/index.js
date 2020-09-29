@@ -267,14 +267,14 @@ const ProductAddPage = () => {
                                     < img
                                         src={image}
                                         key={image}
-                                        width="90px"
-                                        height="60px"
+                                        width="60px"
+
                                         alt="Product image"
                                     ></img>
                                 ))}
                                 <div className="add-img-wrap">
                                     <label className="tien-add-img">
-                                        <img src={AddImage} alt="add img icon" style={{ width: "5vw" }} />
+                                        <img src={AddImage} alt="add img icon" style={{ width: "70px" }} />
                                         <Button variant="info" onClick={uploadWidget} style={{ display: "none" }}>
                                             {addOrEdit} Images
                                  </Button>

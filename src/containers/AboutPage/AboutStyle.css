@@ -8,6 +8,7 @@ display: flex;
 align-items: center;
 flex-wrap: wrap;
 justify-content: center;
+margin-bottom: 20vh;
 margin-top: 10vh;
 
   }
@@ -21,18 +22,20 @@ margin-top: 10vh;
   justify-content: flex-end;
   padding-top: 24vh;
   padding-bottom: 200px;
-  margin-left: 5vw;
+  
   
   
 }
 .chep-map{
-  border: 1px solid red;
+  border: 5px solid white;
   width: 400px;
   height: 400px;
   cursor: pointer;
   margin-left:10px;
   margin-top: 15px;
   margin-bottom: 15px;
+  background: url("../../images/chep-location.png");
+  background-size: cover;
 }
 @media screen and (max-width: 500px){
   .about-page-content{

@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./containers/Routes";
-import { ClipLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "./redux/actions";
 
@@ -25,7 +25,7 @@ function App() {
       {isAuthenticated === undefined ? (
         <div className="vh-100 vw-100 d-flex justify-content-center align-items-center">
           <div className="cliploader-wrap">
-            <ClipLoader color="#f86c6b" size={150} loading={true} />
+            <PropagateLoader color="#5E9194" size={15} loading={true} />
           </div>
         </div>
       ) : (

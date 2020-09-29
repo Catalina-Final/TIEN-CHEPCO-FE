@@ -21,7 +21,9 @@ const AboutPage = () => {
                     <p>📮 Inbox nhu cầu thiết yếu của bạn</p>
                     <p> ☎️ Hotline: 0902441261</p>
                 </div>
-                <div className="chep-map"></div>
+                <div className="chep-map" onClick={() => window.open('https://www.google.com/maps/place/Ch%C3%A9p+%26+Co+-+S%E1%BB%AFa+T%E1%BB%AB+H%E1%BA%A1t/@10.7963128,106.6806627,17z/data=!4m16!1m10!4m9!1m4!2m2!1d106.633179!2d10.755243!4e1!1m3!2m2!1d106.6828247!2d10.7963106!3m4!1s0x31752fb0d06ede5d:0x30db7f446db3653f!8m2!3d10.7963128!4d106.6828514', '_blank')}>
+
+                </div>
             </div>
         </div>
     )

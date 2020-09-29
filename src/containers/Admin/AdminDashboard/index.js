@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import moment from 'moment';
+import CurrencyFormat from 'react-currency-format';
 import { orderActions } from "../../../redux/actions/order.actions";
 import './AdminDashStyle.css'
 import Table from 'react-bootstrap/Table'
@@ -19,16 +20,10 @@ const AdminDashboard = () => {
     var time = totalOrders.filter(order => order.paid).map((item) => item.createdAt[0])
     var totalOrderPrice = orderPrice.reduce((acc, curr) => acc + curr)
     var shipping = totalOrders.filter(order => order.paid).map((item) => item.shipping)
-
-
     return (
         <div className="tien-admin-dashboard-style">
             <div className="tien-admin-body">
-                <div className="tien-admin-sidebar">
-                    <div className="bg-style">
-                        <img src={AdminDashBg} alt="admin dashboard bg" />
-                    </div>
-                </div>
+
                 <div className="tien-admin-content">
                     <Table striped bordered hover>
                         <thead>
@@ -45,8 +40,8 @@ const AdminDashboard = () => {
                             <td>{shipping && shipping.map((info) => (
                                 <>
                                     <div className="d-flex justy-content-center">
-                                        <th style={{ width: "15vw" }}>{info.fullName}</th>
-                                        <th style={{ width: "15vw" }}>Phone: {info.phone}</th>
+                                        <th style={{ width: "33vw" }}>{info.fullName}</th>
+                                        <th style={{ width: "33vw" }}>Phone: {info.phone}</th>
                                     </div>
                                 </>
                             ))}
@@ -55,21 +50,16 @@ const AdminDashboard = () => {
                                 {totalOrders.filter(order => order.paid).map((item) => (
                                     <>
                                         <tbody>
-                                            <td>{item.totalPrice} vnd</td>
 
-                                        </tbody>
+                                            <td><CurrencyFormat value={item.totalPrice} displayType={'text'} thousandSeparator={true} suffix={'₫'} /></td>
+
+                                        </tbody >
                                     </>
                                 ))}
-
                             </th>
-
                         </tbody>
-
-
-
-
                     </Table>
-                    <p>Tổng doanh thu: {totalOrderPrice} vnd</p>
+                    <p >Tổng doanh thu: <span><CurrencyFormat value={totalOrderPrice} displayType={'text'} thousandSeparator={true} suffix={'₫'} /></span></p>
                 </div>
             </div>
         </div>

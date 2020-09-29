@@ -6,7 +6,7 @@ import { useHistory, Link } from "react-router-dom";
 import ProductAdminView from "../../../components/ProductAdminView"
 
 import { Button } from "react-bootstrap"
-import ClipLoader from "react-spinners/ClipLoader";
+import PropagateLoader from "react-spinners";
 import './style.css'
 
 const ProductListPage = () => {
@@ -85,7 +85,7 @@ const ProductListPage = () => {
           {loading ? (
             <>
               <div className="cliploader-wrap">
-                <ClipLoader color="#f86c6b" size={150} loading={loading} />
+                <PropagateLoader color="#5E9194" size={15} loading={loading} />
               </div>
             </>
           ) : (

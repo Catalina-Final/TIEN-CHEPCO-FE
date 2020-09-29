@@ -11,9 +11,28 @@
 
 
 
-.alert-style {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
+.alert{
+    background: url("./images/alert.png");
+    background-size:cover;
+    
+    width:  400px;
+    height: 300px;
+    /* background-color: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.alert-div {
     z-index: 10000;
+    position: absolute;
+    width:  100vw;
+    height: 100vh;
+   
+    left:0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+ align-items: flex-start;   
 }
