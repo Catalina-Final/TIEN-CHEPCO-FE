@@ -168,4 +168,15 @@
         z-index: 3;
         pointer-events: none;
     }
+    .tien-hompage-icon {
+        z-index: 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 10vh;
+        width: 100vw;
+        position: absolute;
+        align-items: center;
+        margin-top: 20vh;
+    }
 }
