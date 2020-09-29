@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import moment from 'moment';
+import CurrencyFormat from 'react-currency-format';
+
 import { Button } from "react-bootstrap"
 import { orderActions } from "../../../redux/actions/order.actions"
 import { useHistory, useParams } from "react-router-dom";
@@ -29,9 +31,10 @@ const OrderAdmin = (order, key) => {
         <div className="tien-order-style">
             <div classname="admin-order-title-wrap">
                 <div className="admin-order-up">
-                    <p>Đơn hàng: {order.order.shipping.fullName}</p>
+                    <p>Đơn hàng: <span style={{ color: "red" }}>{order.order.shipping.fullName}</span></p>
 
-                    <p>Thanh toán: {order.order.paid ? "Paid" : "Pending"}</p>
+                    <p>Tổng tiền: <span style={{ color: "red" }}><CurrencyFormat value={totalPrice} displayType={'text'} thousandSeparator={true} suffix={'₫'} /></span></p>
+                    <p>Thanh toán: <span style={{ color: "red" }}>{order.order.paid ? "Paid" : "Pending"}</span></p>
                     <Button variant="outline-info" onClick={handleChange}>Check</Button>
                 </div>
                 <p>Ngày: {moment(time).format('L')}</p>
@@ -41,7 +44,7 @@ const OrderAdmin = (order, key) => {
                         <p>Địa chỉ: {order.order.shipping.address}</p>
                     </div>
 
-                    <p>Tổng tiền: {totalPrice} vnd</p>
+
                 </div>
                 <hr />
             </div>
@@ -50,9 +53,9 @@ const OrderAdmin = (order, key) => {
 
                     return (
                         <div className="order-detail-info">
-                            <p>{product.product.name}</p>
-                            <p>Giá: {product.product.price} vnd</p>
-                            <p>Số lượng: {product.quantity}</p>
+                            <p style={{ width: "20vw" }}>{product.product.name}</p>
+                            <p style={{ width: "20vw" }}>Giá: {product.product.price} vnd</p>
+                            <p style={{ width: "20vw" }}>Số lượng: {product.quantity}</p>
                         </div>
 
 

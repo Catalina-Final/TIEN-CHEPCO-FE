@@ -12,19 +12,9 @@
     
     align-items: flex-end;
 }
-.order-sidebar{
-    width: 40vw;
-    height:85vh;
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.order-sidebar svg{
-    width: 30vw;
-}
+
 .order-content{
-    width: 60vw;
+    width: 100vw;
     height: 85vh;
    
     display: flex;
@@ -44,8 +34,7 @@
 .admin-order-up{
     display: flex;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    
 }
 .admin-order-up-bot{
     display: flex;

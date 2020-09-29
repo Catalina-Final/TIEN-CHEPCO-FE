@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment';
+import CurrencyFormat from 'react-currency-format';
 import './UserDashboardStyle.css'
 
 const OrderUser = (order, key) => {
@@ -15,7 +16,8 @@ const OrderUser = (order, key) => {
                     <p><span style={{ textDecoration: "underline" }}>Đơn hàng:</span> {order.order.shipping.fullName}</p>
                     <p><span style={{ textDecoration: "underline" }}>Ngày:</span> {moment(time).format('L')}</p>
                     <p><span style={{ textDecoration: "underline" }}>Thanh toán:</span> <span style={{ color: "red" }}>{order.order.paid ? "Done" : "Pending"}</span></p>
-                    <p><span style={{ textDecoration: "underline" }}>Tổng tiền:</span> {totalPrice} vnd</p>
+                    <p><span style={{ textDecoration: "underline", width: "20vw" }}>Tổng tiền:</span> <CurrencyFormat value={totalPrice} displayType={'text'} thousandSeparator={true} suffix={'₫'} /></p>
+
                 </div>
 
                 <div className="user-infor-right">
@@ -36,8 +38,9 @@ const OrderUser = (order, key) => {
                             <div className="user-order" >
                                 <div className="user-order-top">
                                     <p style={{ textDecoration: "underline", width: "20vw" }}>{product.product.name}</p>
-                                    <p style={{ width: "30vw" }}>Giá: {product.product.price} vnd</p>
+                                    <p style={{ width: "30vw" }}>Giá: <span><CurrencyFormat value={product.product.price} displayType={'text'} thousandSeparator={true} suffix={'₫'} /></span></p>
                                     <p style={{ width: "10vw" }}>Số lượng: {product.quantity}</p>
+
                                 </div>
 
                             </div>

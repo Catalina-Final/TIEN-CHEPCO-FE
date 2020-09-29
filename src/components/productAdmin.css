@@ -5,6 +5,7 @@
     background-color: #5E9194;
     border: none;
     display: flex;
+    justify-content: center;
     align-items: center;
     
    }
