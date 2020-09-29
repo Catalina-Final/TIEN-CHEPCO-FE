@@ -1,29 +1,33 @@
 .story-page-style{
     width: 100vw;
     height: 100vh;
-    
     display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	left:0;
+	
 }
 .story-content{
-    
-    height: 85vh;
-    width: 80vw;
+    height: 65vh;
+    width: 70vw;
     display: flex;
-    justify-content: center;
+	justify-content: center;
+	align-items: center;
     
 }
 .story-quote{
     display: flex;
-    align-items: center;
-    
-    
+	align-items: center;
+	height: 50vh;
+	padding:0;
+	width: 50vw;
+	border-radius: 32px;
+	
 }
 blockquote {
 	font-weight: 100;
 	font-size: 1rem;
-	max-width: 600px;
+	width: 60vw;
 	line-height: 1.4;
 	position: relative;
 	margin: 0;
@@ -53,6 +57,14 @@ blockquote:after {
 }
 
 cite {
-	line-height: 3;
 	float: right;
+}
+@media screen and (max-width: 500px){
+	.story-quote{
+		display: flex;
+		align-items: center;
+		padding-top: 5vh;
+		width: 60vw;
+		
+	}
 }

@@ -1,12 +1,13 @@
 import React from 'react'
 import './FooterStyle.css'
 import FooterBg from "./images/milk-footer.png"
+import Parallax from 'react-rellax'
 
 const Footer = () => {
     return (
         <div className="footer-style">
             <div className="footer-chat">
-                <div className="footer-chat-img">
+                <Parallax speed={-1}>
                     <svg viewBox="0 0 790 731" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="undraw_chatting_2yvo 1">
                             <g id="Group" opacity="0.5">
@@ -67,12 +68,15 @@ const Footer = () => {
                             </linearGradient>
                         </defs>
                     </svg>
-                </div>
+                </Parallax>
             </div>
 
-            <div className="footer-img-bg">
+            <div className="footer-img-bg" >
                 <img src={FooterBg} alt="footer pic" className="img-fluid" />
             </div>
+
+
+
 
         </div>
     )

@@ -39,6 +39,36 @@ bottom: 0;
 } 
 .tien-reg-row{
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
+   
 
+}
+
+@media screen and (max-width: 500px){
+    .register-bg img{
+        height: 50vh;
+        position: absolute;
+        z-index:0;
+        bottom: 0;
+        }
+    .tien-resgister-form .tien-resgister-form-detail{
+            width: 80vw;
+            border: 1px solid white;
+            padding: 5vw;
+            background-color: rgba(255, 255, 255, 0.678);
+            border-radius: 40px;
+       
+        margin-top: 20vh;
+            
+        }
+    .tien-reg-row{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items:center;
+        justify-content: flex-end;
+        
+    
+    }
 }

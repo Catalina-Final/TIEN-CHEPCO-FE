@@ -1,56 +1,30 @@
 .footer-style{
     width: 100vw;
-    height: 60vh;
-    
+    height: 80vh;
     display: flex;
     
-}
-.footer-img-bg{
-    position: absolute;
-    z-index: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     
 }
+.footer-img-bg img{
+    
+    width: 100vw;
+      
+}
+
 .footer-chat{
     
-    z-index:100;
-    width: 100vw;
-    
-    display: flex;
-    justify-content: center;
-}
-.footer-chat-img svg{
-    width: 20vw;
-
+    width: 300px;
 }
 
-@media screen and (max-width: 400px){
 
-    .footer-style{
+@media screen and (max-width: 500px){
+    .footer-img-bg img{
+        
         width: 100vw;
-        height: 100vh;
-        
-        display: flex;
-        
-    }
-    .footer-img-bg{
-        position: absolute;
-        top:420vh;
-        z-index: 0;
-        width:100vw;
-        
-        
-    }
-    .footer-chat{
-        
-        z-index:100;
-        width: 100vw;
-        
-        display: flex;
-        justify-content: center;
-    }
-    .footer-chat-img svg{
-        width: 90vw;
-        
+        height: 40vh;
     }
     
 }

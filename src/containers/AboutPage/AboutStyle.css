@@ -1,26 +1,28 @@
 .about-page-style{
-    border: 1px solid red;
-    background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
-    
-   
+  position: absolute;
+  background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
+   width: 100vw;
   }
 .about-wrap{
 display: flex;
-/* justify-content: space-around; */
 align-items: center;
-margin-top: 28vh;
 flex-wrap: wrap;
-border: 1px solid red;
-justify-content: space-around;
+justify-content: center;
+margin-top: 10vh;
+
   }
 
 .about-page-content{
-  border: 1px solid red;
-  width:55vw;
-  padding: 30px;
+ 
+  width:50vw;
   display: flex;
   flex-direction: column;
   pointer-events: none;
+  justify-content: flex-end;
+  padding-top: 30px;
+  padding-bottom: 200px;
+  margin-left: 5vw;
+  
   
 }
 .chep-map{
@@ -28,7 +30,20 @@ justify-content: space-around;
   width: 400px;
   height: 400px;
   cursor: pointer;
-  
+  margin-left:10px;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
+@media screen and (max-width: 500px){
+  .about-page-content{
+    width:80vw;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    justify-content: flex-end;
+    padding: 30px;
+    padding-bottom: 30px;
+    
+  }
 
+}

@@ -45,7 +45,7 @@ const RegisterPage = () => {
   return (
     <div className="tien-register-style" >
       <div className="register-bg">
-        <img src={BgReg} alt="reg background" />
+        <img src={BgReg} alt="reg background" className="img-fluid" />
 
       </div>
       <div className="tien-resgister-form">

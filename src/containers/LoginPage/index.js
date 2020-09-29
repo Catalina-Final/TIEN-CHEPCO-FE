@@ -17,7 +17,7 @@ const LoginPage = () => {
   // return (
   //   <FacebookLogin
   //     appId={FB_APP_ID}
-  //     autoLoad={true}
+  //     autoLoad={false}
   //     fields="name,email"
   //     callback={(res) => console.log(res)}
 
@@ -100,7 +100,7 @@ const LoginPage = () => {
             ) : (
 
                 <label style={{ cursor: "pointer" }}>
-                  <img src={MailIcon} alt="mail icon" style={{ width: "6vw" }} />
+                  <img src={MailIcon} alt="mail icon" style={{ width: "60px" }} />
                   <Button className="btn-block" type="submit" style={{ display: "none" }}>
                     Login
               </Button>
@@ -108,20 +108,19 @@ const LoginPage = () => {
 
               )}
 
-            <label style={{ cursor: "pointer" }}>
-              <img src={FbIcon} alt="fb icon" style={{ width: "6vw" }} />
+            <label style={{ cursor: "pointer", display: "none" }}>
+              <img src={FbIcon} alt="fb icon" style={{ width: "60px" }} />
               <FacebookLogin
                 appId={FB_APP_ID}
                 autoLoad={true}
-
-                scope="name,email,picture"
+                fields="name,email,picture"
                 callback={responseFacebook}
-
+              // onClick={() => console.log("Click Facebook Login")}
               />
             </label>
 
             <label style={{ cursor: "pointer" }}>
-              <img src={GgIcon} alt="google icon" style={{ width: "6vw" }} />
+              <img src={GgIcon} alt="google icon" style={{ width: "60px" }} />
               <GoogleLogin
                 className="fb-bnt-tien"
                 clientId={GOOGLE_CLIENT_ID}
