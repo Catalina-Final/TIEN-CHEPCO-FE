@@ -35,7 +35,7 @@ const OrderAdmin = (order, key) => {
 
                     <p>Tổng tiền: <span style={{ color: "red" }}><CurrencyFormat value={totalPrice} displayType={'text'} thousandSeparator={true} suffix={'₫'} /></span></p>
                     <p>Thanh toán: <span style={{ color: "red" }}>{order.order.paid ? "Paid" : "Pending"}</span></p>
-                    <Button variant="outline-info" onClick={handleChange}>Check</Button>
+                    <Button variant="outline-info" onClick={handleChange}>👌</Button>
                 </div>
                 <p>Ngày: {moment(time).format('L')}</p>
                 <p>Điện thoại: {order.order.shipping.phone}</p>
