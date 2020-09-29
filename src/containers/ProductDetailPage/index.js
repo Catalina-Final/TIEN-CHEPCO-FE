@@ -38,23 +38,14 @@ const ProductDetailPage = () => {
                     <div className="item-wrap">
                         <img src={ChepItem} alt="product-img" />
                     </div>
-                    <div className="item-bot">
-                        <h4>{product.name}</h4>
-                    </div>
 
                 </div>
                 <div className="detail-body">
-                    <div className="detail-body-top">
-                        <p>{product.description}</p>
-                    </div>
-                    <div className="detail-body-bot">
-                        <p>{product.price} ₫</p>
-
-
-                        <Button variant="outline-info" onClick={() => handleBuyNow(product._id)} >+</Button>
-
-                    </div>
-
+                    <p>{product.description}</p>
+                    <hr />
+                    <h4>{product.name}</h4>
+                    <p>{product.price} ₫</p>
+                    <Button className="add-t-cart-detail-btn" variant="outline-info" onClick={() => handleBuyNow(product._id)} >+</Button>
                 </div>
 
             </div>
