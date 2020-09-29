@@ -1,6 +1,6 @@
 .footer-style{
     width: 100vw;
-    height: 80vh;
+    height: 50vh;
     display: flex;
     
     flex-direction: column;
@@ -9,16 +9,26 @@
     
 }
 .footer-img-bg img{
-    
     width: 100vw;
       
 }
 
 .footer-chat{
-    
     width: 300px;
 }
 
+#chat-left {
+    animation: shakeLeft ease infinite alternate;
+    transform-origin: bottom;
+    background-color: red;
+}
+@keyframes shakeLeft {
+    from{
+transform: rotateX(20deg);
+    }to{
+transform: rotateX(45deg);
+    }
+}
 
 @media screen and (max-width: 500px){
     .footer-img-bg img{

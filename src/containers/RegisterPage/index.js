@@ -52,6 +52,7 @@ const RegisterPage = () => {
         <Form onSubmit={handleSubmit} className="tien-resgister-form-detail">
           <Form.Group>
             <Form.Control
+              autocomplete="off"
               type="text"
               placeholder="Name"
               name="name"
@@ -64,6 +65,7 @@ const RegisterPage = () => {
           </Form.Group>
           <Form.Group>
             <Form.Control
+              autocomplete="off"
               type="email"
               placeholder="Email Address"
               name="email"
@@ -76,6 +78,7 @@ const RegisterPage = () => {
           </Form.Group>
           <Form.Group>
             <Form.Control
+              autocomplete="off"
               type="password"
               placeholder="Password"
               name="password"
@@ -90,6 +93,7 @@ const RegisterPage = () => {
           </Form.Group>
           <Form.Group>
             <Form.Control
+              autocomplete="off"
               type="password"
               placeholder="Confirm Password"
               name="password2"

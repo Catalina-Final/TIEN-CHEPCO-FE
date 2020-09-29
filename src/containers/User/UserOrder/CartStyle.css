@@ -1,33 +1,36 @@
 .tien-add-cart-style{
     width: 100vw;
-    height:100vh;
-   
+    
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
 
 }
 .add-cart-body{
     width: 100vw;
-    height: 85vh;
-   
-    display: flex
+   margin-top: 15vh;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 .add-cart-sidebar{
-    width: 40vw;
-    height: 85vh;
-   
+    margin-top: 10vh;
+    width: 350px;
+    height: 350px;
    display: flex;
    align-items: flex-end;
    justify-content: center;
    padding-bottom: 10vh;
-    
+  
 }
-.quantity-bg svg{
-    width: 30vw;
-   
+.quantity-bg img{
+    width: 350px;
+    height: 350px; 
 }
 .add-cart-content{
+    
     width: 60vw;
     height: 85vh;
    
@@ -37,9 +40,10 @@
     justify-content: center;
 }
 .cart-products-list{
-   
+  
+   padding: 15px;
     width: 60vw;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     overflow: scroll;
     flex-direction: column;
@@ -48,13 +52,14 @@
 .cart-products-send{
    
     width: 60vw;
-    height: 20vh;
+    height: 10vh;
     display: flex;
     align-items: flex-end;
 
 }
 .cart-send-style svg{
-    width: 5vw;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
 }
 

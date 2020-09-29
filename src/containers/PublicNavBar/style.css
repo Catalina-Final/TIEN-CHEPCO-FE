@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
     align-items: center;
     position: absolute;
     
@@ -22,6 +21,8 @@
 .tien-nav-links {
    display: flex;
    flex-wrap: wrap;
+   border: 1px solid red;
+   align-items: center;
   
 }
 .chepLogo{

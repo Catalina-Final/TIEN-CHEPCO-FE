@@ -72,7 +72,7 @@ const HomePage = () => {
 
         </div>
         <div className="tien-hompage-icon">
-          <h4>Best Sellers</h4>
+          <h2>Best Sellers</h2>
 
           <TLink
             activeClass=""

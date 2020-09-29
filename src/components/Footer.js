@@ -28,13 +28,13 @@ const Footer = () => {
                                 <g id="Group_4" opacity="0.5">
                                     <path id="Vector_8" opacity="0.5" d="M5 158.11V300.83H229.86C229.86 300.83 246.46 333.5 275 343C275 343 265.89 319.86 275.4 300.83H338V158.11H5Z" fill="url(#paint2_linear)" />
                                 </g>
-                                <g id="&#8;chat-left">
+                                <g id="chat-left">
                                     <path id="Vector_9" d="M14 163V298H239C239 298 239 325 266 334C266 334 257 316 266 298H329V163H14Z" fill="#C2D1CE" />
                                     <path id="Vector_10" d="M221 190H41V208H221V190Z" fill="white" />
                                     <path id="Vector_11" d="M284 217H41V235H284V217Z" fill="white" />
                                     <path id="Vector_12" d="M257 244H41V262H257V244Z" fill="white" />
                                 </g>
-                                <g id="chat-rigth">
+                                <g id="chat-right">
                                     <path id="Vector_13" d="M761 438V573H536C536 573 536 600 509 609C509 609 518 591 509 573H446V438H761Z" fill="#C2D1CE" />
                                     <path id="Vector_14" d="M663 465H483V483H663V465Z" fill="white" />
                                     <path id="Vector_15" d="M726 492H483V510H726V492Z" fill="white" />

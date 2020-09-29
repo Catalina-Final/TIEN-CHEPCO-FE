@@ -15,8 +15,9 @@ const CartItems = ({ chosenItem }) => {
             </div>
             <div className="item-price">
                 <p>{chosenItem?.product?.price} vnd</p>
+
             </div>
-            <hr />
+
             <div className="choosen-item-quantity">
                 <div className="add-item-quantity">
                     <label>
@@ -31,7 +32,7 @@ const CartItems = ({ chosenItem }) => {
                     </label>
                 </div>
                 <div className="amount-quantity">
-                    {/* <p>{chosenItem?.quantity}</p> */}
+
                     <p>{quantity}</p>
                 </div>
                 <div className="remove-item-quantity">
@@ -59,29 +60,29 @@ const CartItems = ({ chosenItem }) => {
                         }}>down</Button>
                     </label>
                 </div>
-                <div className="confirm-remove-product">
-                    <div>
-                        <label style={{ cursor: "pointer" }}>
-                            <p>Confirm</p>
-                            <Button
-                                style={{ display: "none" }}
-                                onClick={() => dispatch(productActions.updateProductFromCart(chosenItem.product._id, quantity))}
-                            >Confirm</Button>
-                        </label>
-                    </div>
-                    <div>
-                        <label style={{ cursor: "pointer" }}>
-                            <p>Xoá</p>
-                            <Button
-                                style={{ display: "none" }}
-                                onClick={() => dispatch(productActions.removeProductFromCart(chosenItem.product._id, chosenItem?.quantity))}
-                            >Remove</Button>
-                        </label>
-                    </div>
+                <div className="confirm-remove-product" className="tien-qty-mid">
+
+                    <label style={{ cursor: "pointer" }}>
+                        <p>Xác nhận</p>
+                        <Button
+                            style={{ display: "none" }}
+                            onClick={() => dispatch(productActions.updateProductFromCart(chosenItem.product._id, quantity))}
+                        >Xác nhận</Button>
+                    </label>
+
+
+                    <label style={{ cursor: "pointer" }}>
+                        <p>Xoá</p>
+                        <Button
+                            style={{ display: "none" }}
+                            onClick={() => dispatch(productActions.removeProductFromCart(chosenItem.product._id, chosenItem?.quantity))}
+                        >Remove</Button>
+                    </label>
+
                 </div>
 
             </div>
-            <hr />
+
 
 
         </div>

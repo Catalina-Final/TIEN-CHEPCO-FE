@@ -1,34 +1,45 @@
 .user-dash-style{
     width: 100vw;
-    height: 100vh;
     
     display: flex;
-    align-items: flex-end;
+    flex-wrap: wrap;
     background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
+    border: 1px solid red;
 }
 .user-dash-body{
+    margin-top: 15vh;
     width: 100vw;
-    height: 85vh;
-    
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    border: 1px solid red;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+    
    
 }
 .user-dash-sidebar{
-    width: 40vw;
-    height: 85vh;
+    width: 350px;
+    height: 350px;
+   
     
-    display: flex;
-    align-items: flex-end;
-    padding: 10vh;
 }
 .user-dash-sidebar svg{
-    width: 30vw;
-}
+            width: 350px;
+            height: 350px;
+ }
 
 .user-dash-content{
-    width: 60vw;
+    border: 1px solid white;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.089);
+    width: 65vw;
     height: 75vh;
-    
+    padding: 30px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -70,4 +81,55 @@
 .user-order-top{
     display: flex;
     justify-content: space-between;
+}
+
+
+#hand-move{
+    animation: handMove 1s ease-in infinite alternate;
+    transform-origin:  top;
+}
+#trolly-move{
+    animation: trollyMove 1s ease-in infinite alternate;
+    transform-origin:  top;
+}
+
+@keyframes handMove {
+    from{
+        transform: rotate(-5deg)
+    }to{
+        transform: rotateX(15deg);
+    }
+
+}
+@keyframes trollyMove {
+    from{
+        transform: rotateX(10deg)
+    }to{
+        transform: rotateY(-15deg)
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .user-dash-style{
+        width: 100vw;
+        display: flex;
+        align-items: flex-end;
+        background-image: linear-gradient(135deg, #ffffff 0%, #F4EFE4 80%);
+       
+    }
+    .user-dash-body{
+        width: 100vw;
+        border: 1px solid red;
+        padding-top: 20vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    .user-dash-sidebar svg{
+       position: relative;
+       bottom:0;
+        
+}
 }

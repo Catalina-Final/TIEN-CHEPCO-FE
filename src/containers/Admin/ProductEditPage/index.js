@@ -147,6 +147,7 @@ const ProductEditPage = () => {
 
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     type="text"
                                     plaintext
                                     required
@@ -159,6 +160,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     plaintext
                                     as="textarea"
                                     rows="10"
@@ -192,6 +194,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     plaintext
                                     rows="10"
@@ -204,6 +207,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     plaintext
                                     rows="10"
@@ -216,6 +220,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     type="number"
                                     id="replyNumber"
                                     min="0"
@@ -231,6 +236,7 @@ const ProductEditPage = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     plaintext
                                     rows="10"

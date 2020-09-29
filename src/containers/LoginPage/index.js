@@ -69,6 +69,7 @@ const LoginPage = () => {
 
           <Form.Group>
             <Form.Control
+              autocomplete="off"
               type="email"
               required
               placeholder="Email Address"
@@ -82,6 +83,7 @@ const LoginPage = () => {
           </Form.Group>
           <Form.Group>
             <Form.Control
+              autocomplete="off"
               type="password"
               placeholder="Password"
               name="password"

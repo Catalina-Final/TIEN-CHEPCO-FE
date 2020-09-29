@@ -144,6 +144,7 @@ const ProductAddPage = () => {
                             </div>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     plaintext
                                     size="sm"
                                     type="text"
@@ -157,6 +158,7 @@ const ProductAddPage = () => {
 
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     plaintext
                                     size="sm"
                                     as="textarea"
@@ -170,6 +172,7 @@ const ProductAddPage = () => {
 
                             {/* <Form.Group>
                                 <Form.Control
+                                autocomplete="off"
                                     plaintext
                                     as="textarea"
                                     size="sm"
@@ -202,6 +205,7 @@ const ProductAddPage = () => {
 
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     plaintext
                                     type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     size="sm"
@@ -215,6 +219,7 @@ const ProductAddPage = () => {
 
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     plaintext
                                     type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     size="sm"
@@ -228,6 +233,7 @@ const ProductAddPage = () => {
 
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     plaintext
                                     type="number" id="replyNumber" min="0" data-bind="value:replyNumber"
                                     size="sm"
@@ -241,6 +247,7 @@ const ProductAddPage = () => {
 
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     plaintext
                                     type="number"
                                     id="replyNumber"

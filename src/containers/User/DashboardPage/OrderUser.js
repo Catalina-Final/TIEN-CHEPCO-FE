@@ -35,9 +35,9 @@ const OrderUser = (order, key) => {
                         <div className="user-order-wrap">
                             <div className="user-order" >
                                 <div className="user-order-top">
-                                    <p style={{ textDecoration: "underline", width: "15vw" }}>{product.product.name}</p>
-                                    <p>Giá: {product.product.price} vnd</p>
-                                    <p>Số lượng: {product.quantity}</p>
+                                    <p style={{ textDecoration: "underline", width: "20vw" }}>{product.product.name}</p>
+                                    <p style={{ width: "30vw" }}>Giá: {product.product.price} vnd</p>
+                                    <p style={{ width: "10vw" }}>Số lượng: {product.quantity}</p>
                                 </div>
 
                             </div>

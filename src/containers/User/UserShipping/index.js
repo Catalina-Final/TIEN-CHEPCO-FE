@@ -51,6 +51,7 @@ const UserShipping = () => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     type="text"
                                     plaintext
                                     required
@@ -63,6 +64,7 @@ const UserShipping = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     type="number"
                                     id="replyNumber"
                                     min="0"
@@ -78,6 +80,7 @@ const UserShipping = () => {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
+                                    autocomplete="off"
                                     as="textarea"
                                     plaintext
                                     style={{ height: "20vh" }}

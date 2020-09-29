@@ -21,7 +21,7 @@ const Combo = () => {
                         <div className="combo-content">
 
                             <div className="combo-content-title">
-                                <h4> Combo</h4>
+                                <h2> Combo</h2>
                             </div>
                             <Parallax speed={3}>
                                 <div className="combo-content-bot">
@@ -60,11 +60,11 @@ const Combo = () => {
 
                 </div>
             </Parallax>
-
-            <div className="home-break-line">
-                <img src={BreakBg} width="700px" alt="break background" className="img-fluid" />
-            </div>
-
+            <Parallax speed={1} zindex={5}>
+                <div className="home-break-line" style={{ marginTop: "10vh" }}>
+                    <img src={BreakBg} width="700px" alt="break background" className="img-fluid" />
+                </div>
+            </Parallax>
 
         </>
     )
